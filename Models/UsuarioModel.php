@@ -5,10 +5,9 @@ class UsuarioModel {
 
     function __construct(){
         $this->db = new PDO('mysql:host=localhost;'.'dbname=wikiserie;charset=utf8', 'root', '');
-        
     }
 
-    public function GetUsuario(){
+    public function GetUsuarios(){
         $sentencia = $this->db->prepare( "select * from usuario");
         $sentencia->execute();
         $usuarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
@@ -19,9 +18,15 @@ class UsuarioModel {
     public function GetTuplaUsuario($id){
         $sentencia = $this->db->prepare( "SELECT * FROM usuario WHERE id=$id");
         $sentencia->execute();
-        $usuarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        $usuario = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
-        return $usuarios;
+        return $usuario;
+    }
+
+    //MODIFICAR SET UPDATE ESTA MAL LA CONSULTA
+    public function SetUsurario($id, $nombre, $apellido, $user, $clave){
+        $sentencia = $this->db->prepare("UPDATE usuario SET nombre=$nombre, apellido=$apellido, user=$user, clave=$clave WHERE id=?");
+        $sentencia->execute(array($id));
     }
 
     /*si es usuario ingresa como administrador de la pagina */
@@ -31,17 +36,16 @@ class UsuarioModel {
         $usuarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
         if ($usuarios != null){
-            return "correcto";//Ingreso como administrador
+            return true;//Ingreso como administrador
                 
         } else {
-             return "incorrecto";//error de usuarios o pass incorrecta
+            return false;//error de usuarios o pass incorrecta
         }
     }
 
-    public function AgregarUsuario($nombre,$apellido,$usuario,$constraseña){
-
-        $sentencia = $this->db->prepare("INSERT INTO usuario(nombre, apellido, usuario, contraseña) VALUES(?,?,?,?)");
-        $sentencia->execute(array($nombre,$apellido,$usuario,$contraseña));
+    public function AgregarUsuario($nombre,$apellido,$usuario,$clave){
+        $sentencia = $this->db->prepare("INSERT INTO usuario(nombre, apellido, usuario, clave) VALUES(?,?,?,?)");
+        $sentencia->execute(array($nombre,$apellido,$usuario,$clave));
     }
 
     public function BorrarUsuario($id){

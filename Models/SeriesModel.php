@@ -3,19 +3,20 @@
         private $db;
         
         function __construct(){
-            $this->db=new PDO('mysql:host=localhost','dbname=wikiserie','root','');
+            $this->db=new PDO('mysql:host=localhost;'.'dbname=wikiserie;charset=utf8','root','');
         }
 
         public function GetSeries(){
-            $sentencia=$this->db->prepare("select * from serie");
+            $sentencia=$this->db->prepare("SELECT * FROM serie");
             $sentencia->execute();
             $series = $sentencia->fetchAll(PDO::FETCH_OBJ);
+
             return $series;
         }
 
-        public function InsertarSerie($nombre,$sinopcis,$img,$actor1,$actor2,$actor3){
-            $sentencia =$this->db->prepare("INSERT TO serie(nombre,sinopcis,img,actor1,actor2,actor3) VALUES(?,?,?,?,?,?)");
-            $sentencia->execute(array($nombre,$sinopcis,$img,$actor1,$actor2,$actor3));
+        public function InsertarSerie($nombre,$sinopsis,$img,$actor1,$actor2,$actor3){
+            $sentencia =$this->db->prepare("INSERT TO serie(nombre,sinopsis,img,actor1,actor2,actor3) VALUES(?,?,?,?,?,?)");
+            $sentencia->execute(array($nombre,$sinopsis,$img,$actor1,$actor2,$actor3));
         }
 
         public function BorrarSerie($id){

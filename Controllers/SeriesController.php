@@ -1,6 +1,6 @@
 <?php
 require_once "./Models/SeriesModel.php";
-require_once "./Views/TareasViews.php";
+require_once "./Views/SeriesView.php";
 
 class SeriesController{
     private $model;
@@ -11,9 +11,9 @@ class SeriesController{
         $this->view=new SeriesView();
     }
     
-    public function GetTareas(){
-       $series=$this->model->GetTareas();
+    public function GetSeries(){
+       $series=$this->model->GetSeries();
        $this->view->DisplaySeries($series); 
     }
-    
+}
 ?>
