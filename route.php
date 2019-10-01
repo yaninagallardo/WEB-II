@@ -17,6 +17,9 @@ if($action == ''){
         if($partesURL[0] == "series"){
             $controller->GetSeries();
         }
+        // elseif($partesURL[0] == "usuario") {
+        //     $controllerll->GetLogin();
+        // }
     }
 }
 

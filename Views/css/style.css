@@ -1,0 +1,75 @@
+/* -----------------HEADER------------------ */
+*{
+    padding: 0%;
+    border: 0%;
+}
+body{
+    background-image: url(images/fondo-estrella.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Barra nav*/
+nav{
+    float: right;
+    font-size:20px;
+    margin:3%;
+    margin-right: 30%;
+}
+li a :hover{
+    background-color: rgba(133, 170, 201, 0.945);
+}
+/*logo*/
+.logo{
+    width: 10%;
+    margin:3%;
+}
+
+
+/*-------------------FOOTER------------------------*/ 
+footer{
+    width: 200%;
+}
+
+.listaFooter{
+    margin-left:5%;
+    display: inline;
+}
+.listaFooter a{
+    color:  rgb(245, 245, 245);
+}
+#sociaFooter{
+    color:  rgb(245, 245, 245);
+    margin-left: 5%;
+}
+.listaFooter,#sociaFooter{
+    font-size: 20px;
+   
+}
+
+/* ------------- VER_SERIES ----------------*/
+
+/*Titulo pág principal*/
+.titulo{
+    color: rgb(0, 255, 157);
+    margin: 0% 30%;
+}
+
+/*tarjeta de imagenes en pág principal*/
+.card{
+    width: 230px;
+}
+.row li{
+    margin-top: 5%;
+    margin-left: 10%;
+    
+}
+
+
+
+
+
+
+
+
+
