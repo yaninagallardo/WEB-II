@@ -17,6 +17,14 @@ class SeriesView {
         // $smarty->debugging = true;
         $smarty->display('templates/ver_series.tpl');
     }
+
+    public function mostrarSerie(){
+        $smarty =new Smarty();
+        $smarty->assing('BASE_URL',BASE_URL);
+        $smarty->assing('titulo',"Titulo");
+        $smarty->assing('serie',$serie);
+        $smarty->assing('templates/ver_series.tpl');
+    }
 }
 
 ?>

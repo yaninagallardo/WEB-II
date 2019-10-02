@@ -20,7 +20,12 @@
         }
 
         public function BorrarSerie($id){
-            $sentencia=$this->db->prepare("DELETE FROM serie WHERE id=?");
+            $sentencia=$this->db->prepare("DELETE * FROM serie WHERE id=?");
+            $sentencia->execute(array($id));
+        }
+
+        public function BuscarSerie($id){
+            $sentencia=$this->db->prepare("SELECT * FROM serie WHERE id=? ");
             $sentencia->execute(array($id));
         }
 
