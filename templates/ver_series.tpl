@@ -1,5 +1,9 @@
 {include file="header.tpl"}
 
+<a href="login" class="link">
+    <button type="button" class="btn-iniciarsesion">Iniciar Sesión</button>
+</a>
+
 <h1 class="titulo">Series Destacadas</h1>
            <ul class="row" class="hs">
                 {foreach from=$lista_series item=serie}
@@ -12,5 +16,5 @@
                             </li>
                 {/foreach}
           </ul>
-          
+
 {include file="footer.tpl"}

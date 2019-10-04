@@ -4,14 +4,14 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <meta http-equiv="X-UA-Compatible" content="ie=edge">
                 <base href='{$BASE_URL}' >
-                <link rel="stylesheet" href="./Views/css/style.css">
+                <link rel="stylesheet" href="./public/css/style.css">
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
                 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
                 <title>WikiSeries</title>
             </head>
             <body>
-                <a href="">
-                    <img src="images/logo1.png" class="logo">
+                <a href="series">
+                    <img src="./public/images/logo1.png" class="logo">
                 </a>
             <nav class="navbar-default">
                 <ul class="nav nav-pills">
@@ -39,6 +39,7 @@
                             <a class="dropdown-item" id="categoriaNav" href="">Mordern Family</a>
                         </div>
                     </li>
-                </ul>
+                </ul>  
         </nav>
     </header>
+    

@@ -10,28 +10,30 @@ class LoginController{
         $this->model=new UsuarioModel();
         $this->view=new LoginView();
     }
-    
-    public function GetLogin(){
-    //    $series=$this->model->GetSeries();
-       $this->view->DisplayLogin("hola"); 
+
+    public function IniciarSesion(){
+        $password = $_POST['pass'];
+
+        $usuario = $this->model->GetPassword($_POST['user']);
+
+        if (isset($usuario) && $usuario != null && password_verify($password, $usuario->password)){
+            session_start();
+            $_SESSION['user'] = $usuario->user;
+            $_SESSION['userId'] = $usuario->id;
+            header("Location: " . URL_SERIES);
+        }else{
+            header("Location: " . URL_LOGIN);
+        }
     }
 
-    /*si es usuario ingresa como administrador de la pagina */
-    public function IsUsuario(){
-        $user = $_POST['user'];
-        $pass = $_POST['pass'];
-        header("Location: " . BASE_URL);
+    public function GetLogin(){
+       $this->view->DisplayLogin(); 
+    }
 
-        if(isset($user)){
-            $user=$this->model->GetUsuario($user, $pass);
-            if ($user != null){
-                $correcto = "correcto";
-                $this->view->DisplayLogin($correcto);
-                    
-            } else {
-                echo "incorrecto";//error de usuarios o pass incorrecta
-            }
-        }
+    public function Logout(){
+        session_start();
+        session_destroy();
+        header("Location: " . URL_LOGIN);
     }
 }
 ?>
