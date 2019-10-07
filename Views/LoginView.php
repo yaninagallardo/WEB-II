@@ -2,7 +2,6 @@
 
 require_once('libs/Smarty.class.php');
 
-
 class LoginView {
 
     function __construct(){

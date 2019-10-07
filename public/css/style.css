@@ -58,26 +58,31 @@ footer{
 .card{
     width: 230px;
 }
-.row li{
+.row .card{
     margin-top: 5%;
     margin-left: 10%;
     
 }
- /* NO TOMA LA CLASE DEL BOTON POR LO TANTO NO APLICA EL ESTILO */
-.link .btn-iniciarsesion{
-    width: 50%;
+/* PRUEBA DE ESTILO A LAS IMAGENES DE LAS TARJETAS (NO FUNCIONA) */
+.altura{   
+    height: 200px;
+}
+.btn-iniciarsesion{
     background-color: transparent;
-    color: red;
+    border: transparent;
+    color: rgb(84, 77, 128);
 }
 
 /* -------------------------------- LOGIN----------------- */
 .box-login{
-    background-color: aliceblue;
+    
+    width: 50%;
+    height: 200px;
 }
 
 .form-login{
-    margin: 10%;
-    color: aqua;
+    display: flex;
+    flex-direction: column;
 }
 
 

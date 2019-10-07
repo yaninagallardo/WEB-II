@@ -16,13 +16,14 @@ class LoginController{
 
         $usuario = $this->model->GetPassword($_POST['user']);
 
-        if (isset($usuario) && $usuario != null && password_verify($password, $usuario->password)){
+        if (isset($usuario) && $usuario != null && password_verify($password, $usuario->clave)){
             session_start();
             $_SESSION['user'] = $usuario->user;
             $_SESSION['userId'] = $usuario->id;
-            header("Location: " . URL_SERIES);
+            header("Location: " . URL_ADMIN);
         }else{
-            header("Location: " . URL_LOGIN);
+            echo "NO INGRESO";
+            // header("Location: " . URL_LOGIN);
         }
     }
 

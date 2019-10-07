@@ -8,12 +8,11 @@ class UsuarioModel {
     }
 
     public function GetPassword($user){
-        $sentencia = $this->db->prepare( "SELECT * FROM usuario WHERE user=?");
-        $sentencia->execute();
+        $sentencia = $this->db->prepare( "SELECT clave FROM usuario WHERE user = ?");
+        $sentencia->execute(array($user));
         $pass = $sentencia->fetch(PDO::FETCH_OBJ);
 
         return $pass;
     }
 }
-
 ?>

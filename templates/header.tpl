@@ -10,36 +10,37 @@
                 <title>WikiSeries</title>
             </head>
             <body>
-                <a href="series">
-                    <img src="./public/images/logo1.png" class="logo">
-                </a>
-            <nav class="navbar-default">
-                <ul class="nav nav-pills">
-                    <li>
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">Accion</a>
-                        <div class="dropdown-menu ">
-                            <a class="dropdown-item" id="categoriaNav" href="">Arrow</a>
-                            <a class="dropdown-item" id="categoriaNav" href="">Chicago P.D</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">Terror</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" id="categoriaNav" href="">Stranger Things</a>
-                            <a class="dropdown-item" id="categoriaNav" href="">Supernatural</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">Comedia</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" id="categoriaNav" href="">The BigBang Theory</a>
-                            <a class="dropdown-item" id="categoriaNav" href="">Mordern Family</a>
-                        </div>
-                    </li>
-                </ul>  
-        </nav>
-    </header>
-    
+                <header>
+                    <a href="series">
+                        <img src="./public/images/logo1.png" class="logo">
+                    </a>
+                <nav class="navbar-default">
+                    <ul class="nav nav-pills">
+                        <li>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">Accion</a>
+                            <div class="dropdown-menu ">
+                                <a class="dropdown-item" id="categoriaNav" href="">Arrow</a>
+                                <a class="dropdown-item" id="categoriaNav" href="">Chicago P.D</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">Terror</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" id="categoriaNav" href="">Stranger Things</a>
+                                <a class="dropdown-item" id="categoriaNav" href="">Supernatural</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">Comedia</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" id="categoriaNav" href="">The BigBang Theory</a>
+                                <a class="dropdown-item" id="categoriaNav" href="">Mordern Family</a>
+                            </div>
+                        </li>
+                    </ul>  
+                </nav>
+            </header>
+        

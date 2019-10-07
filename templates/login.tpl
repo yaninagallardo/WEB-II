@@ -1,4 +1,3 @@
-
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -11,12 +10,13 @@
         <title>WikiSeries</title>
     </head>
     <body>
-    <div class='box-login'>
-            <form action="iniciarSesion" method="post" class='form-login'>
+        <div class="box-login">
+            <img src="./public/images/logo1.png" class="logo inicioSesion">  
+            <form action="iniciarSesion" method="post" class="form-login">
                 <input type="text" name="user" placeholder="Usuario">
                 <input type="password" name="pass" placeholder="Contraseña">
                 <input type="submit" value="Ingresar">
             </form>
-    </div>
+        </div>
 
 {include file="footer.tpl"}

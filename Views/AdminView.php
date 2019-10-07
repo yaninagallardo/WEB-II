@@ -2,7 +2,7 @@
 
 require_once('libs/Smarty.class.php');
 
-class SeriesView {
+class AdminView {
 
     function __construct(){
     }
@@ -10,12 +10,10 @@ class SeriesView {
     public function DisplaySeries($series){
         
         $smarty = new Smarty();
-        $smarty->assign('BASE_URL',BASE_URL);
         $smarty->assign('titulo',"Mostrar Series");
         $smarty->assign('lista_series',$series);
         // $smarty->debugging = true;
-        $smarty->display('templates/ver_series.tpl');
+        $smarty->display('templates/ventanaAdmin.tpl');
     }
 }
-
 ?>
