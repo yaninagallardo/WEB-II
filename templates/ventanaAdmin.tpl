@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>WikiSeries</title>
-        <link rel="stylesheet" href="public/css/style.css?1.0">
+        <link rel="stylesheet" href="public/css/style.css?2.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
@@ -17,6 +17,7 @@
             </a>
             
         </header>
+        <label class="subti-perfil">Perfil Administrador</label>
         <table class="table-admin">
             <thead>
                 <tr>

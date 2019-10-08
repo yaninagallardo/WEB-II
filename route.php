@@ -32,11 +32,14 @@ if($action == ''){
             $controllerAdmin = new AdminController();
             $controllerAdmin->GetSeries();
         }elseif($partesURL[0] == "borrar") {
+            $controllerAdmin = new AdminController();
             $controllerAdmin->BorrarSerie($partesURL[1]);
         }elseif($partesURL[0] == "editar") {
+            $controllerAdmin = new AdminController();
             $controllerAdmin->EditarSerie($partesURL[1]);
         }elseif($partesURL[0] == "insertarSerie") {
-            $controller->InsertarSerie();
+            $controllerAdmin = new AdminController();
+            $controllerAdmin->InsertarSerie();
         }
     }
 }
