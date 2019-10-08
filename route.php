@@ -7,7 +7,6 @@ $action = $_GET["action"];
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 define("URL_SERIES", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/series');
 define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/login');
-define("URL_LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
 define("URL_ADMIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/ventAdmin');
 
 $controller = new SeriesController();
@@ -32,6 +31,12 @@ if($action == ''){
         }elseif($partesURL[0] == "ventAdmin") {
             $controllerAdmin = new AdminController();
             $controllerAdmin->GetSeries();
+        }elseif($partesURL[0] == "borrar") {
+            $controllerAdmin->BorrarSerie($partesURL[1]);
+        }elseif($partesURL[0] == "editar") {
+            $controllerAdmin->EditarSerie($partesURL[1]);
+        }elseif($partesURL[0] == "insertarSerie") {
+            $controller->InsertarSerie();
         }
     }
 }

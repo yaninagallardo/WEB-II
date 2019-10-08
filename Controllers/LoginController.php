@@ -22,8 +22,7 @@ class LoginController{
             $_SESSION['userId'] = $usuario->id;
             header("Location: " . URL_ADMIN);
         }else{
-            echo "NO INGRESO";
-            // header("Location: " . URL_LOGIN);
+            header("Location: " . URL_LOGIN);
         }
     }
 
@@ -34,7 +33,7 @@ class LoginController{
     public function Logout(){
         session_start();
         session_destroy();
-        header("Location: " . URL_LOGIN);
+        header("Location: " . BASE_URL);
     }
 }
 ?>

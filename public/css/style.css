@@ -3,6 +3,7 @@
     padding: 0%;
     border: 0%;
 }
+
 body{
     background-image: url(images/fondo-estrella.png);
     background-repeat: no-repeat;
@@ -27,7 +28,7 @@ li a :hover{
 
 /*-------------------FOOTER------------------------*/ 
 footer{
-    width: 200%;
+    width: 100%;
 }
 
 .listaFooter{
@@ -50,44 +51,127 @@ footer{
 
 /*Titulo pág principal*/
 .titulo{
-    color: rgb(0, 255, 157);
+    font-size: 300%;
+    color: rgb(25, 221, 58);
     margin: 0% 30%;
 }
 
 /*tarjeta de imagenes en pág principal*/
-.card{
-    width: 230px;
+
+.card {
+    width: 300px;
 }
-.row .card{
-    margin-top: 5%;
-    margin-left: 10%;
-    
+.text-white {
+    margin-top: 10%;
+    margin-left: 8%;
 }
-/* PRUEBA DE ESTILO A LAS IMAGENES DE LAS TARJETAS (NO FUNCIONA) */
-.altura{   
-    height: 200px;
-}
+/* PRUEBA DE ESTILO A LAS IMAGENES DE LAS TARJETAS (NO FUNCIONA) apache??*/
+
 .btn-iniciarsesion{
     background-color: transparent;
     border: transparent;
     color: rgb(84, 77, 128);
 }
 
-/* -------------------------------- LOGIN----------------- */
-.box-login{
-    
-    width: 50%;
-    height: 200px;
+.btn-iniciarsesion {
+    border: transparent;
+    background-color: transparent;
+    color: red;
+    font-size: 150%;
+
+    /* ubicación */
+    margin-left: 80%;
 }
 
-.form-login{
+/* -------------------------------- LOGIN----------------- */
+.form-login {
+    width: 30%;
+    background-color: rgba(42, 67, 211, 0.534);
+   
+    display: flex;
+    flex-direction: column;
+    /* ubicación */
+    margin:auto; 
+    padding: 2%;
+}
+
+.form-login input {
+    width: 90%;
+    margin: 2% auto;
+    
+}
+
+.form-login .btn-ingreso {
+    width: 40%;
+    margin-top: 11%;
+    background-color: rgb(211, 4, 73);
+    border: transparent;
+    color: azure;
+}
+
+/* ----------------  VENTANA ADMIN --------------- */
+.btn-logout{
+    border: transparent;
+    background-color: transparent;
+    color: red;
+    font-size:200%;
+
+    /* ubicación */
+    float: right;
+    margin: 5%;
+}
+.table-admin {
+    margin: 5% auto;
+    margin-bottom: 1%;
+    width: 70%;
+    color: rgba(60, 255, 0, 0.856);
+}
+table,th, td {
+    background-color: rgba(0, 102, 128, 0.356);
+    border: 5px solid rgb(0, 90, 38);
+    border-collapse: collapse;  
+    padding: 10px;
+    text-align: center;
+}
+.btn-admin{
+    color: rgb(238, 255, 0);
+    background-color: transparent;
+    font-size: 12px;
+    border-color: transparent;
+    font-size: 100%;
+}
+
+.box-nuevaserie {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(83, 71, 241, 0.335);
+    margin:10% auto;
+}
+.box-nuevaserie .titulo-agregar{
+    background-color: transparent;
+    color: greenyellow;
+    font-size: 150%;
+    padding: 2%;
+    margin:auto;
+}
+.form-nuevaserie{
     display: flex;
     flex-direction: column;
 }
-
-
-
-
+.form-nuevaserie input, .form-nuevaserie textarea{
+    background-color: rgba(248, 248, 248, 0.712);
+    width: 80%;
+    padding: 2%;
+    margin:auto;
+}
+ .form-nuevaserie .btn-ingreso{
+    width: 40%;
+    margin: 6% auto;
+    background-color: rgb(211, 4, 73);
+    border: transparent;
+    color: azure;
+ }
 
 
 

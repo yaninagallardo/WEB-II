@@ -1,8 +1,10 @@
-{include file="header.tpl"}
+
 
 <a href="login">
     <button type="button" class="btn-iniciarsesion">Iniciar Sesión</button>
 </a>
+
+{include file="header.tpl"}
 
 <h1 class="titulo">Series Destacadas</h1>
 <ul class="row">
