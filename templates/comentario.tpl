@@ -2,9 +2,9 @@
     {foreach from=$comentarios item=comentario}
         <li>
             <div>
-                <h5>{$comentario->nombre}</h5>
-                <span>{$comentario->temporada}</span>
-                <span>{$comentario->capitulo}</span>
+                <label>{$comentario->nombre}</label>
+                <label>{$comentario->temporada}</label>
+                <label>{$comentario->capitulo}</label>
                 <p>{$comentario->comentario}</p>
             </div>
         </li>
