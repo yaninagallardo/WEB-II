@@ -58,8 +58,8 @@ footer{
 
 /*tarjeta de imagenes en pág principal*/
 
-.card {
-    width: 300px;
+.text-white {
+    width: 20%;
     
 }
 .altura{
@@ -111,6 +111,12 @@ footer{
     background-color: rgb(211, 4, 73);
     border: transparent;
     color: azure;
+}
+
+.msj-error{
+    margin: 1% auto;
+    color:red;
+    font-size: 80%;
 }
 
 /* ----------------  VENTANA ADMIN --------------- */

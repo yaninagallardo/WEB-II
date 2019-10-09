@@ -24,8 +24,7 @@
                     <th>Serie</th>
                     <th>Sinopsis</th>
                     <th>Actor</th>
-                    <th>Actor</th>
-                    <th>Actor</th>
+                    <th>Tipo</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -35,16 +34,50 @@
                 <tr id="{$serie->id}">
                     <td>{$serie->nombre}</td>
                     <td>{$serie->sinopsis}</td>
-                    <td>{$serie->arctor1}</td>
-                    <td>{$serie->actor2}</td>
-                    <td>{$serie->actor3}</td>
+                    <td>{$serie->actor_principal}</td>
+                    <td>{$serie->tipo}</td>
                     <td>
-                        <a href="editar/{$serie->id}">
+                        <a href="editar/{$serie->id_serie}">
                             <button type="button" class="btn-admin">Editar</button>
                         </a>
                     </td>
                     <td>
-                        <a href="borrar/{$serie->id}">
+                        <a href="borrar/{$serie->id_serie}">
+                            <button type="button" class="btn-admin">Borrar</button>
+                        </a>
+                    </td>
+                </tr>
+            {/foreach}
+            </tbody>
+        </table>
+
+        {* capitulos *}
+
+        <table class="table-admin">
+            <thead>
+                <tr>
+                    <th>Temporada</th>
+                    <th>Capitulo</th>
+                    <th>Titulo</th>
+                    <th>Serie</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {foreach from=$lista_capitulos item=cap}
+                <tr id="{$cap->id}">
+                    <td>{$cap->temporada}</td>
+                    <td>{$cap->temporada}</td>
+                    <td>{$cap->temporada}</td>
+                    <td>{'...'}</td>
+                    <td>
+                        <a href="editar/{$cap->id_capitulo}">
+                            <button type="button" class="btn-admin">Editar</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="borrar/{$cap->id_capitulo}">
                             <button type="button" class="btn-admin">Borrar</button>
                         </a>
                     </td>
@@ -59,9 +92,8 @@
                 <input type="text" name="nombre" placeholder="Nombre">
                 <textarea name="sinopsis" placeholder="Sinopsis"></textarea>
                 <input type="text" name="url_img" placeholder="Dirección de imagen">
-                <input type="text" name="actor1" placeholder="Actor">
-                <input type="text" name="actor2" placeholder="Actor">
-                <input type="text" name="actor3" placeholder="Actor">
+                <input type="text" name="actor" placeholder="Actor">
+                <input type="text" name="tipo" placeholder="Categoria">
                 <input type="submit" value="Insertar" class="btn-ingreso">
             </form>
         </div>

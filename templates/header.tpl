@@ -20,30 +20,16 @@
             </a>
         <nav class="navbar-default">
             <ul class="nav nav-pills">
-                <li>
+            {foreach from=$lista_series item=serie}
+                {* REVISAR PARA QUE MUESTRE UN SOLO TIPO *}
+                <li>  
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="true" aria-expanded="false">Accion</a>
+                        aria-haspopup="true" aria-expanded="false">{$serie->tipo}</a>
                     <div class="dropdown-menu ">
-                        <a class="dropdown-item" id="categoriaNav" href="">Arrow</a>
-                        <a class="dropdown-item" id="categoriaNav" href="">Chicago P.D</a>
+                        <a class="dropdown-item" id="categoriaNav" href="">{$serie->nombre}</a>
                     </div>
                 </li>
-                <li>
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="true" aria-expanded="false">Terror</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" id="categoriaNav" href="">Stranger Things</a>
-                        <a class="dropdown-item" id="categoriaNav" href="">Supernatural</a>
-                    </div>
-                </li>
-                <li>
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="true" aria-expanded="false">Comedia</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" id="categoriaNav" href="">The BigBang Theory</a>
-                        <a class="dropdown-item" id="categoriaNav" href="">Mordern Family</a>
-                    </div>
-                </li>
+            {/foreach}
             </ul>  
         </nav>
     </header>

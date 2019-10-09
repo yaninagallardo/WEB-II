@@ -13,16 +13,15 @@ class LoginController{
 
     public function IniciarSesion(){
         $password = $_POST['pass'];
-
         $usuario = $this->model->GetPassword($_POST['user']);
 
-        if (isset($usuario) && $usuario != null && password_verify($password, $usuario->clave)){
+        if (isset($usuario) && $usuario != null && password_verify($password, $usuario->pass)){
             session_start();
             $_SESSION['user'] = $usuario->user;
-            $_SESSION['userId'] = $usuario->id;
+            $_SESSION['userId'] = $usuario->id_usuario;
             header("Location: " . URL_ADMIN);
         }else{
-            header("Location: " . URL_LOGIN);
+            $this->view->showLoggin("*** Usuario y/o consatrseña incorrectos ***");
         }
     }
 
@@ -33,7 +32,7 @@ class LoginController{
     public function Logout(){
         session_start();
         session_destroy();
-        header("Location: " . BASE_URL);
+        header("Location: " . URL_LOGIN);
     }
 }
 ?>
