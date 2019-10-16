@@ -1,16 +1,16 @@
 <?php
 require_once "./Models/SeriesModel.php";
-require_once "./Models/CapitulosModel.php";
+require_once "./Models/GeneroModel.php";
 require_once "./Views/AdminView.php";
 
 class AdminController{
     private $model;
-    private $modelCap;
+    private $modelGen;
     private $view;
 
     function __construct(){
         $this->model=new SeriesModel();
-        $this->modelCap=new CapitulosModel();
+        $this->modelGen=new GeneroModel();
         $this->view=new AdminView();
     }
 
@@ -34,8 +34,8 @@ class AdminController{
     public function GetSeries(){
         // $this->checkLogginIn();
         $series=$this->model->GetSeries();
-        $capitulos=$this->modelCap->GetCapitulos();
-        $this->view->DisplaySeries($series,$capitulos); 
+        $generos=$this->modelGen->GetGeneros();
+        $this->view->DisplaySeries($series,$generos); 
     }
 
     public function InsertarSerie(){

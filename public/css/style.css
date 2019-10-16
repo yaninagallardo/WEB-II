@@ -175,7 +175,7 @@ table,th, td {
     display: flex;
     flex-direction: column;
 }
-.form-nuevaserie input, .form-nuevaserie textarea{
+.form-nuevaserie input, .form-nuevaserie textarea, .form-nuevaserie option{
     background-color: rgba(248, 248, 248, 0.712);
     width: 80%;
     padding: 2%;

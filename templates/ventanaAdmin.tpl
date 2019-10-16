@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>WikiSeries</title>
-        <link rel="stylesheet" href="public/css/style.css?2.0">
+        <link rel="stylesheet" href="public/css/style.css?3.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
@@ -18,13 +18,15 @@
             
         </header>
         <label class="subti-perfil">Perfil Administrador</label>
+
+        {* Lista series *}
         <table class="table-admin">
             <thead>
                 <tr>
                     <th>Serie</th>
                     <th>Sinopsis</th>
                     <th>Actor</th>
-                    <th>Tipo</th>
+                    <th>Categoria</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -35,7 +37,7 @@
                     <td>{$serie->nombre}</td>
                     <td>{$serie->sinopsis}</td>
                     <td>{$serie->actor_principal}</td>
-                    <td>{$serie->tipo}</td>
+                    <td>{$serie->id_genero}</td>
                     <td>
                         <a href="editar/{$serie->id_serie}">
                             <button type="button" class="btn-admin">Editar</button>
@@ -51,33 +53,25 @@
             </tbody>
         </table>
 
-        {* capitulos *}
+        {* Lista Generos *}
 
         <table class="table-admin">
             <thead>
                 <tr>
-                    <th>Temporada</th>
-                    <th>Capitulo</th>
-                    <th>Titulo</th>
-                    <th>Serie</th>
-                    <th></th>
-                    <th></th>
+                    <th colspan="3">Categorias</th>
                 </tr>
             </thead>
             <tbody>
-            {foreach from=$lista_capitulos item=cap}
-                <tr id="{$cap->id}">
-                    <td>{$cap->temporada}</td>
-                    <td>{$cap->temporada}</td>
-                    <td>{$cap->temporada}</td>
-                    <td>{'...'}</td>
+            {foreach from=$lista_generos item=gen}
+                <tr id="{$gen->id_genero}">
+                    <td>{$gen->nombre}</td>
                     <td>
-                        <a href="editar/{$cap->id_capitulo}">
+                        <a href="editar/{$gen->id_genero}">
                             <button type="button" class="btn-admin">Editar</button>
                         </a>
                     </td>
                     <td>
-                        <a href="borrar/{$cap->id_capitulo}">
+                        <a href="borrar/{$cap->id_genero}">
                             <button type="button" class="btn-admin">Borrar</button>
                         </a>
                     </td>
@@ -93,7 +87,12 @@
                 <textarea name="sinopsis" placeholder="Sinopsis"></textarea>
                 <input type="text" name="url_img" placeholder="Dirección de imagen">
                 <input type="text" name="actor" placeholder="Actor">
-                <input type="text" name="tipo" placeholder="Categoria">
+                <select>
+                 <option value="">Seleccione una opción</option>
+                {foreach from=$lista_generos item=gen}
+                    <option value="{$gen->id_genero}" name="genero">{$gen->nombre}</option>
+                {/foreach}
+                </select>
                 <input type="submit" value="Insertar" class="btn-ingreso">
             </form>
         </div>

@@ -14,9 +14,9 @@
             return $series;
         }
 
-        public function InsertarSerie($nombre,$sinopsis,$actor,$tipo,$img){
-            $sentencia =$this->db->prepare("INSERT TO serie(nombre,sinopsis,actor_principal,tipo,img) VALUES(?,?,?,?,?)");
-            $sentencia->execute(array($nombre,$sinopsis,$actor,$tipo,$img));
+        public function InsertarSerie($nombre,$sinopsis,$actor,$img,$genero){
+            $sentencia =$this->db->prepare("INSERT TO serie(nombre,sinopsis,actor_principal,img,id_genero) VALUES(?,?,?,?,?)");
+            $sentencia->execute(array($nombre,$sinopsis,$actor,$img,$genero));
         }
 
         public function BorrarSerie($id){
