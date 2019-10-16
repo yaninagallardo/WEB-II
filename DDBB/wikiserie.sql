@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-10-2019 a las 21:57:09
+-- Tiempo de generación: 16-10-2019 a las 21:28:54
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -25,16 +25,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `capitulos`
+-- Estructura de tabla para la tabla `genero`
 --
 
-CREATE TABLE `capitulos` (
-  `id_capitulo` int(11) NOT NULL,
-  `titulo` varchar(100) NOT NULL,
-  `temporada` int(11) NOT NULL,
-  `capitulo` int(11) NOT NULL,
-  `id_serie` int(11) NOT NULL
+CREATE TABLE `genero` (
+  `id_genero` int(11) NOT NULL,
+  `nombre` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `genero`
+--
+
+INSERT INTO `genero` (`id_genero`, `nombre`) VALUES
+(1, 'Acción'),
+(2, 'Terror'),
+(3, 'Comedia');
 
 -- --------------------------------------------------------
 
@@ -47,18 +53,17 @@ CREATE TABLE `serie` (
   `nombre` varchar(45) NOT NULL,
   `sinopsis` varchar(400) NOT NULL,
   `actor_principal` varchar(200) NOT NULL,
-  `tipo` varchar(40) NOT NULL,
-  `img` varchar(200) DEFAULT NULL
+  `img` varchar(200) DEFAULT NULL,
+  `id_genero` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `serie`
 --
 
-INSERT INTO `serie` (`id_serie`, `nombre`, `sinopsis`, `actor_principal`, `tipo`, `img`) VALUES
-(1, 'Arrow', '', '', 'Acción', 'public/images/arrow-portada-horizontal.png'),
-(2, 'Stranger Things', '', '', 'Terror', 'public/images/strager-portada-horizontal.png'),
-(3, 'Chicago PD', '', '', 'Acción', 'public/images/chicago-portada-horizontal.png');
+INSERT INTO `serie` (`id_serie`, `nombre`, `sinopsis`, `actor_principal`, `img`, `id_genero`) VALUES
+(1, 'Arrow', 'Oliver Queen, un billonario playboy, naufragó en una isla remota del Pacífico. Ahora, 5 años después de este accidente, Oliver es encontrado y llevado de vuelta a su hogar en Starlight City. ', 'Stephen Amell', 'public/images/arrow-portada-horizontal.png', 0),
+(2, 'The 100', '', '', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -85,11 +90,10 @@ INSERT INTO `usuario` (`id_usuario`, `nombre`, `user`, `pass`) VALUES
 --
 
 --
--- Indices de la tabla `capitulos`
+-- Indices de la tabla `genero`
 --
-ALTER TABLE `capitulos`
-  ADD PRIMARY KEY (`id_capitulo`),
-  ADD KEY `id_serie` (`id_serie`);
+ALTER TABLE `genero`
+  ADD PRIMARY KEY (`id_genero`);
 
 --
 -- Indices de la tabla `serie`
@@ -108,32 +112,22 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `capitulos`
+-- AUTO_INCREMENT de la tabla `genero`
 --
-ALTER TABLE `capitulos`
-  MODIFY `id_capitulo` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `genero`
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `serie`
 --
 ALTER TABLE `serie`
-  MODIFY `id_serie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_serie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `capitulos`
---
-ALTER TABLE `capitulos`
-  ADD CONSTRAINT `capitulos_ibfk_1` FOREIGN KEY (`id_serie`) REFERENCES `serie` (`id_serie`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
