@@ -25,6 +25,7 @@ class SeriesView {
         $smarty->assing('serie',$serie);
         $smarty->assing('templates/ver_series.tpl');
     }
+
 }
 
 ?>

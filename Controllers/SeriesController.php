@@ -23,5 +23,10 @@ class SeriesController{
         $series=$this->model->BuscarSerie($id);
         $this->view->mostrarSerie();
     }
+
+    public function seriesGenero($id){
+        $serie=$this->model->serieGenero($id);
+        $this->view->DisplaySeries($series);
+    }
 }
 ?>
