@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>WikiSeries</title>
-        <link rel="stylesheet" href="public/css/style.css?3.0">
+        <link rel="stylesheet" href="public/css/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
@@ -33,18 +33,18 @@
             </thead>
             <tbody>
             {foreach from=$lista_series item=serie}
-                <tr id="{$serie->id}">
+                <tr id={$serie->id_serie}>
                     <td>{$serie->nombre}</td>
                     <td>{$serie->sinopsis}</td>
                     <td>{$serie->actor_principal}</td>
                     <td>{$serie->id_genero}</td>
                     <td>
-                        <a href="editar/{$serie->id_serie}">
-                            <button type="button" class="btn-admin">Editar</button>
+                        <a href="editarSerie/{$serie->id_serie}">
+                            <button type="button" class="btn-admin" class="btnEditar-js">Editar</button>
                         </a>
                     </td>
                     <td>
-                        <a href="borrar/{$serie->id_serie}">
+                        <a href="borrarSerie/{$serie->id_serie}">
                             <button type="button" class="btn-admin">Borrar</button>
                         </a>
                     </td>
@@ -54,7 +54,6 @@
         </table>
 
         {* Lista Generos *}
-
         <table class="table-admin">
             <thead>
                 <tr>
@@ -63,38 +62,52 @@
             </thead>
             <tbody>
             {foreach from=$lista_generos item=gen}
-                <tr id="{$gen->id_genero}">
-                    <td>{$gen->nombre}</td>
+                <tr id={$gen->id_genero}>
+                    <td class="nombre-gen" >{$gen->nombre}</td>
                     <td>
-                        <a href="editar/{$gen->id_genero}">
-                            <button type="button" class="btn-admin">Editar</button>
-                        </a>
+                        <button type="button" class="btn-admin" id={$gen->id_genero}>Editar</button>
                     </td>
                     <td>
-                        <a href="borrar/{$cap->id_genero}">
+                        <a href="borrarGenero/{$gen->id_genero}">
                             <button type="button" class="btn-admin">Borrar</button>
                         </a>
                     </td>
                 </tr>
             {/foreach}
+            
+    
+                <tr>      {* INSERTAR NUEVO GENERO *}
+                    <td colspan="3">
+                        <form action="insertarGenero" method="POST">
+                            <input type="text" name="nombre-gen" required>
+                            <input type="submit" value="Insertar" class="btn-ingreso" >
+                        </form>
+                    </td>
+                </tr>
             </tbody>
         </table>
-        
+        {include file="editarDatos.tpl"}
         <div class="box-nuevaserie">
             <label class="titulo-agregar">AGREGAR SERIE</label>
-            <form action="insertarSerie" method="post" class='form-nuevaserie'>
-                <input type="text" name="nombre" placeholder="Nombre">
-                <textarea name="sinopsis" placeholder="Sinopsis"></textarea>
+            
+            {* INSERTAR SERIE *}
+            <form action="insertarSerie" method="POST" class='form-nuevaserie' required>
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <textarea name="sinopsis" placeholder="Sinopsis" required></textarea>
                 <input type="text" name="url_img" placeholder="Dirección de imagen">
-                <input type="text" name="actor" placeholder="Actor">
-                <select>
-                 <option value="">Seleccione una opción</option>
+                <input type="text" name="actor" placeholder="Actor" required>
+
+                {* OPCIONES *}
+                <select class="opciones" name="genero" required>
+                 <option value="" disable>Seleccione una opción</option>
                 {foreach from=$lista_generos item=gen}
-                    <option value="{$gen->id_genero}" name="genero">{$gen->nombre}</option>
+                    <option value={$gen->id_genero}>{$gen->nombre}</option>
                 {/foreach}
                 </select>
+
                 <input type="submit" value="Insertar" class="btn-ingreso">
             </form>
         </div>
 
+        <script src="public/js/editarGenero.js"></script>
 {include file="footer.tpl"}

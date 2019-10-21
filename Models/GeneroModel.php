@@ -13,5 +13,20 @@
 
             return $generos;
         }
+
+        public function InsertarGenero($nombre){
+            $sentencia =$this->db->prepare("INSERT INTO genero (nombre) VALUES (?)");
+            $sentencia->execute(array($nombre));
+        }
+
+        public function BorrarGenero($id){
+            $sentencia = $this->db->prepare("DELETE FROM genero WHERE id_genero=?");
+            $sentencia-> execute(array($id));
+        }
+
+        public function EditarGenero($nombre, $id){
+        $sentencia =$this->db->prepare("UPDATE genero SET nombre=? WHERE id_genero=?");
+            $sentencia->execute(array($nombre, $id));
+        }
     }
 ?>

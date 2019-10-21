@@ -32,15 +32,24 @@ if($action == ''){
         }elseif($partesURL[0] == "ventAdmin") {
             $controllerAdmin = new AdminController();
             $controllerAdmin->GetSeries();
-        }elseif($partesURL[0] == "borrar") {
-            $controllerAdmin = new AdminController();
-            $controllerAdmin->BorrarSerie($partesURL[1]);
-        }elseif($partesURL[0] == "editar") {
-            $controllerAdmin = new AdminController();
-            $controllerAdmin->EditarSerie($partesURL[1]);
         }elseif($partesURL[0] == "insertarSerie") {
             $controllerAdmin = new AdminController();
             $controllerAdmin->InsertarSerie();
+        }elseif($partesURL[0] == "borrarSerie") {
+            $controllerAdmin = new AdminController();
+            $controllerAdmin->BorrarSerie($partesURL[1]);
+        }elseif($partesURL[0] == "editarSerie") {
+            $controllerAdmin = new AdminController();
+            $controllerAdmin->EditarSerie($partesURL[1]);
+        }elseif($partesURL[0] == "insertarGenero") {
+            $controllerAdmin = new AdminController();
+            $controllerAdmin->InsertarGenero();
+        }elseif($partesURL[0] == "borrarGenero") {
+            $controllerAdmin = new AdminController();
+            $controllerAdmin->BorrarGenero($partesURL[1]);
+        }elseif($partesURL[0] == "editarGenero") {
+            $controllerAdmin = new AdminController();
+            $controllerAdmin->EditarGenero();
         }
     }
 }
