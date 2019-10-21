@@ -24,13 +24,13 @@ class AdminController{
         }
 
         if(isset($_SESSION['LAST_ACTIVITY']) &&
-            time()- $_SESSION['LAST_ACTIVITY'] > 5){
+            time()- $_SESSION['LAST_ACTIVITY'] > 3600){
                 header("Location: " . URL_LOGOUT);
                 die();
             }
         $_SESSION['LAST_ACTIVITY'] = time();
     }
-   
+    // envia a la vista lista de series y generos
     public function GetSeries(){
         // $this->checkLogginIn();
         $series=$this->model->GetSeries();
@@ -38,11 +38,35 @@ class AdminController{
         $this->view->DisplaySeries($series,$generos); 
     }
 
-    public function InsertarSerie(){
+    // ABM GENERO
+    public function InsertarGenero(){
         $this->checkLogginIn();
-        $this->model->InsertarSerie($_POST['nombre'],$_POST['sinopsis'],$_POST['url_img'],$_POST['actor'],$_POST['tipo']);
+        $this->modelGen->InsertarGenero($_POST['nombre-gen']);
         header("Location: " . URL_ADMIN);
     }
+
+    public function BorrarGenero($id){
+        $this->checkLogginIn();
+        $this->modelGen->BorrarGenero($id);
+        header("Location: " . URL_ADMIN);
+    }
+
+    public function EditarGenero(){
+        $this->checkLogginIn();
+        $this->modelGen->EditarGenero($_POST['id'], $_POST['genero']);
+        header("Location: " . URL_ADMIN);
+    }
+
+    // ABM SERIE
+
+    public function InsertarSerie(){
+        $this->checkLogginIn();
+        $g = $_POST['genero'];
+        $this->model->InsertarSerie($_POST['nombre'],$_POST['sinopsis'],$_POST['url_img'],$_POST['actor'], $_POST['genero']);
+        // var_dump($g);
+        header("Location: " . URL_ADMIN);
+    }
+
     public function BorrarSerie($id){
         $this->checkLogginIn();
         $this->model->BorrarSerie($id);

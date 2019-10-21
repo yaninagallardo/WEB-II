@@ -132,7 +132,7 @@ footer{
 }
 
 .subti-perfil {
-    color: yellow;
+    color: rgb(255, 255, 15);
     font-size: 120%;
     margin-left: 4%;
 }
@@ -140,7 +140,7 @@ footer{
     margin: 5% auto;
     margin-bottom: 1%;
     width: 70%;
-    color: rgba(60, 255, 0, 0.856);
+    color: rgb(136, 255, 0);
 }
 table,th, td {
     background-color: rgba(0, 102, 128, 0.356);
@@ -175,14 +175,14 @@ table,th, td {
     display: flex;
     flex-direction: column;
 }
-.form-nuevaserie input, .form-nuevaserie textarea, .form-nuevaserie option{
+.form-nuevaserie input, .form-nuevaserie textarea, .form-nuevaserie select{
     background-color: rgba(248, 248, 248, 0.712);
     width: 80%;
     padding: 2%;
     margin:auto;
 }
  .form-nuevaserie .btn-ingreso{
-    width: 40%;
+    width: 60%;
     margin: 6% auto;
     background-color: rgb(211, 4, 73);
     border: transparent;
@@ -191,6 +191,47 @@ table,th, td {
 
 
 
+/* EDITAR DATOS (GENERO) */
+/* MOSTRAR Y OCULTAR VENTANA MODAL DE EDITAR GENERO */
+.show-windows{
+    visibility: visible;
+ }
+.hidden-windows{
+     visibility: hidden;
+}
+ 
+#box-editarGen{
+    background-color: rgba(240, 248, 255, 0.5);
+    width: 20%;
+    height: 120px;
+    margin: auto;
+   
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+}
 
+.btn-guardar, .btn-cancelar{
+    width: 30%;
+    background-color: rgb(211, 4, 73);
+    border: transparent;
+    color: azure;
+}
 
+.box-editarGen label{
+    display: flex;
+    justify-content: center;
+}
+.input-editar{
+    width: 80%;
+    margin-left: 10%;
+}
+ .btns-guardar-cancelar{
+    margin: 6% 10%;
 
+ }
+
+ 

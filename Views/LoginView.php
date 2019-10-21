@@ -16,7 +16,7 @@ class LoginView {
     }
 
     public function DisplayLogin(){
-      
+    
         $smarty = new Smarty();
         $smarty->assign('titulo', "Login");
         $smarty->assign('URL_LOGIN',URL_LOGIN);
