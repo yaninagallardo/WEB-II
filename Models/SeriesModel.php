@@ -7,7 +7,7 @@
         }
 
         public function GetSeries(){
-            $sentencia=$this->db->prepare("SELECT * FROM serie order by serie.nombre");
+            $sentencia=$this->db->prepare("SELECT * FROM serie ORDER BY serie.nombre");
             $sentencia->execute();
             $series = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
@@ -15,12 +15,12 @@
         }
 
         public function InsertarSerie($nombre,$sinopsis,$actor,$img,$genero){
-            $sentencia =$this->db->prepare("INSERT TO serie(nombre,sinopsis,actor_principal,img,id_genero) VALUES(?,?,?,?,?)");
+            $sentencia =$this->db->prepare("INSERT INTO serie (nombre,sinopsis,actor_principal,img,id_genero) VALUES(?,?,?,?,?)");
             $sentencia->execute(array($nombre,$sinopsis,$actor,$img,$genero));
         }
 
         public function BorrarSerie($id){
-            $sentencia=$this->db->prepare("DELETE * FROM serie WHERE id=?");
+            $sentencia=$this->db->prepare("DELETE FROM serie WHERE id_serie=?");
             $sentencia->execute(array($id));
         }
 
@@ -29,6 +29,7 @@
             $sentencia->execute(array($id));
         }
 
+        
         public function EditarSerie($id){
             
         }
