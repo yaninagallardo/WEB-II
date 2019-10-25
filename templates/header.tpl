@@ -30,6 +30,9 @@
                     </div>
                 </li>
             {/foreach}
+                <li>
+                    <a href="listaSerie" class="nav-link">Lista De series</a>
+                </li>
             </ul>  
         </nav>
     </header>

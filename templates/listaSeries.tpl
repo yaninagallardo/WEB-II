@@ -1,26 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta http-equiv="Expires" content="0">
-  <meta http-equiv="Last-Modified" content="0">
-  <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-        <link rel="stylesheet"  type="text/css" href="./public/css/style.css?3.0">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <title>WikiSeries</title>
-    </head>
-<body>
-
+{include file="head.tpl"}
 <h1 class="titulo">Lista De Series</h1>
-<ul class="row">
-    {foreach from=$lista item=gen}
-        <table>
-        </table>
-    {/foreach}
-</ul>
+        <table class="table-admin" >
+        <thead>
+            <tr>
+            <th>Genero</th>
+            <th>Titulo</th>
+            <th>Sinopsis</th>
+            <th>Actor</th>
+            </tr>
+        </thead>
+        <tbody>
+        {foreach from=$lista item=gen}
+            <tr>
+            <td>{$gen->nombreGen}</td>
+            <td>{$gen->nombre}</td>
+            <td>{$gen->sinopsis}</td>
+            <td>{$gen->actor_principal}</td>
+            </tr>
+        {/foreach}
+        </tbody>
+    </table>
 
 {include file="footer.tpl"}

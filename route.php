@@ -12,8 +12,8 @@ define("URL_ADMIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"
 define("URL_LISTA", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/listaSeries');
 
 
-$controller = new SeriesController();
 
+$controller = new SeriesController();
 if($action == ''){
     $controller->GetSeries();
 }else{
@@ -22,6 +22,8 @@ if($action == ''){
 
         if($partesURL[0] == "series"){
             $controller->GetSeries();
+        }elseif($partesURL[0]=="serie"){
+            $controller->GetSerie($partesURL[1]);
         }elseif($partesURL[0]=="listaSerie"){
             $controller->serieGenero();
         }elseif($partesURL[0] == "login") {

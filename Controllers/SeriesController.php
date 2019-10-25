@@ -19,11 +19,11 @@ class SeriesController{
        $generos=$this->modelGen->GetGeneros();
        $this->view->DisplaySeries($series, $generos); 
     }
-    public function GetSerie($id){
-        $series=$this->model->BuscarSerie($id);
-        $this->view->mostrarSerie();
-    }
 
+    public function GetSerie($id){
+        $serie=$this->model->BuscarSerie($id);
+        $this->view->infoSerie($serie);
+    }
     public function serieGenero(){   
         $generos=$this->model->serieGenero();
         $this->view->mostrarSeries($generos); 
