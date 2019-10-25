@@ -14,17 +14,10 @@
             return $series;
         }
 
-       /* public function serieGenero($id){
-            $sentencia=$this->db->prepare("SELECT * FROM serie INNER JOIN genero ON serie.id_genero=genero.id_genero WHERE serie.id_serie=?");
-            $sentencia->execute(array($id));
+        public function serieGenero(){
+            $sentencia=$this->db->prepare("SELECT * FROM serie INNER JOIN genero ON serie.id_genero=genero.id_genero ORDER BY genero.nombreGen,serie.nombre");
+            $sentencia->execute();
             $serie = $sentencia->fetchAll(PDO::FETCH_OBJ);
-            return $serie;
-        }*/
-
-        public function seriesGenero($id){
-            $sentencia=$this->db->prepare("SELECT * FROM serie,genero WHERE serie.id_genero=genero.id_genero AND serie.id_genero=? ");
-            $sentencia->execute(array($id));
-            $serie=$sentencia->fetchALL(PDO::FETCH_OBJ);
             return $serie;
         }
 
