@@ -14,6 +14,13 @@
             return $series;
         }
 
+        public function serieGenero(){
+            $sentencia=$this->db->prepare("SELECT * FROM serie INNER JOIN genero ON serie.id_genero=genero.id_genero ORDER BY genero.nombreGen,serie.nombre");
+            $sentencia->execute();
+            $serie = $sentencia->fetchAll(PDO::FETCH_OBJ);
+            return $serie;
+        }
+
         public function InsertarSerie($nombre,$sinopsis,$actor,$img,$genero){
             $sentencia =$this->db->prepare("INSERT INTO serie (nombre,sinopsis,actor_principal,img,id_genero) VALUES(?,?,?,?,?)");
             $sentencia->execute(array($nombre,$sinopsis,$actor,$img,$genero));

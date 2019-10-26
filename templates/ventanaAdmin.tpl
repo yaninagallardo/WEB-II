@@ -63,9 +63,11 @@
             <tbody>
             {foreach from=$lista_generos item=gen}
                 <tr id={$gen->id_genero}>
-                    <td class="nombre-gen" >{$gen->nombre}</td>
+                    <td class="nombre-gen" >{$gen->nombreGen}</td>
                     <td>
+                    <a>
                         <button type="button" class="btn-admin" id={$gen->id_genero}>Editar</button>
+                    </a>
                     </td>
                     <td>
                         <a href="borrarGenero/{$gen->id_genero}">
@@ -73,9 +75,11 @@
                         </a>
                     </td>
                 </tr>
+                {include file="editarDatos.tpl"}
             {/foreach}
-            
-    
+
+            {include file="editarDatos.tpl"}
+
                 <tr>      {* INSERTAR NUEVO GENERO *}
                     <td colspan="3">
                         <form action="insertarGenero" method="POST">
@@ -86,7 +90,8 @@
                 </tr>
             </tbody>
         </table>
-        {include file="editarDatos.tpl"}
+        
+        
         <div class="box-nuevaserie">
             <label class="titulo-agregar">AGREGAR SERIE</label>
             
@@ -101,7 +106,7 @@
                 <select class="opciones" name="genero" required>
                  <option value="" disable>Seleccione una opción</option>
                 {foreach from=$lista_generos item=gen}
-                    <option value={$gen->id_genero}>{$gen->nombre}</option>
+                    <option value={$gen->id_genero}>{$gen->nombreGen}</option>
                 {/foreach}
                 </select>
 

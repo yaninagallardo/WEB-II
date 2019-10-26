@@ -53,7 +53,9 @@ class AdminController{
 
     public function EditarGenero(){
         $this->checkLogginIn();
-        $this->modelGen->EditarGenero($_POST['id'], $_POST['genero']);
+        $id = $_POST['id-genero'];
+        $genero =  $_POST['genero'];
+        $this->modelGen->EditarGenero($id, $genero);
         header("Location: " . URL_ADMIN);
     }
 

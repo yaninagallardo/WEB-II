@@ -7,7 +7,7 @@
         }
 
         public function GetGeneros(){
-            $sentencia=$this->db->prepare("SELECT * FROM genero ORDER BY genero.nombre");
+            $sentencia=$this->db->prepare("SELECT * FROM genero ORDER BY genero.nombreGen");
             $sentencia->execute();
             $generos=$sentencia->fetchAll(PDO::FETCH_OBJ);
 
@@ -15,7 +15,7 @@
         }
 
         public function InsertarGenero($nombre){
-            $sentencia =$this->db->prepare("INSERT INTO genero (nombre) VALUES (?)");
+            $sentencia =$this->db->prepare("INSERT INTO genero (nombreGen) VALUES (?)");
             $sentencia->execute(array($nombre));
         }
 
@@ -25,7 +25,7 @@
         }
 
         public function EditarGenero($nombre, $id){
-        $sentencia =$this->db->prepare("UPDATE genero SET nombre=? WHERE id_genero=?");
+            $sentencia =$this->db->prepare("UPDATE genero SET nombreGen=? WHERE id_genero=?");
             $sentencia->execute(array($nombre, $id));
         }
     }

@@ -9,6 +9,8 @@ define("URL_SERIES", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT
 define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/login');
 define("URL_LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
 define("URL_ADMIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/ventAdmin');
+define("URL_LISTA", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/listaSeries');
+
 
 $controller = new SeriesController();
 
@@ -20,6 +22,8 @@ if($action == ''){
 
         if($partesURL[0] == "series"){
             $controller->GetSeries();
+        }elseif($partesURL[0]=="listaSerie"){
+            $controller->serieGenero();
         }elseif($partesURL[0] == "login") {
             $controllerUser = new LoginController();
             $controllerUser->GetLogin();
