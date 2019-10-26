@@ -33,7 +33,7 @@ class AdminController{
     // envia a la vista lista de series y generos
     public function GetSeries(){
         // $this->checkLogginIn();
-        $series=$this->model->GetSeries();
+        $series=$this->model->serieGenero();
         $generos=$this->modelGen->GetGeneros();
         $this->view->DisplaySeries($series,$generos); 
     }
@@ -54,8 +54,7 @@ class AdminController{
     public function EditarGenero(){
         $this->checkLogginIn();
         $id = $_POST['id-genero'];
-        $genero =  $_POST['genero'];
-        $this->modelGen->EditarGenero($id, $genero);
+        $this->modelGen->EditarGenero( $_POST['genero'], $id);
         header("Location: " . URL_ADMIN);
     }
 
@@ -65,7 +64,6 @@ class AdminController{
         $this->checkLogginIn();
         $g = $_POST['genero'];
         $this->model->InsertarSerie($_POST['nombre'],$_POST['sinopsis'],$_POST['actor'],$_POST['url_img'], $_POST['genero']);
-        // var_dump($g);
         header("Location: " . URL_ADMIN);
     }
 
@@ -75,8 +73,11 @@ class AdminController{
         header("Location: " . URL_ADMIN);
     }
 
-    public function EditarSerie($id){
-        
+    public function EditarSerie(){
+        $this->checkLogginIn();
+        $id = $_POST['id-serie'];
+        $this->model->EditarSerie( $_POST['nombreSerie'], $_POST['sinopsis'], $_POST['actor'], $_POST['img'], $_POST['genero-editar'], $id);
+        header("Location: " . URL_ADMIN);
     }
 }
 ?>

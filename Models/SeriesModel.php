@@ -37,8 +37,9 @@
             $serie = $sentencia->fetchAll(PDO::FETCH_OBJ);
             return $serie;
         }
-        public function EditarSerie($id){
-            
+        public function EditarSerie($nombre, $sinopsis, $actor, $img, $id_genero, $id){
+            $sentencia =$this->db->prepare("UPDATE serie SET nombre=?, sinopsis=?, actor_principal=?, img=?, id_genero=? WHERE id_serie=?");
+            $sentencia->execute(array($nombre, $sinopsis, $actor, $img, $id_genero, $id));
         }
     }
 ?>

@@ -1,4 +1,5 @@
 {include file="head.tpl"}
+{include file="logo.tpl"}
 
 {* lista series ordenadas por categoria y luego por nombre de serie *}
 <h1 class="titulo">Lista De Series</h1>

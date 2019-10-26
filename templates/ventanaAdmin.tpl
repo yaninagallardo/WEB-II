@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>WikiSeries</title>
-        <link rel="stylesheet" href="public/css/style.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    </head>
+{include file="head.tpl"}
     <body>
         <header>
         <a href="logout">
                 <button class="btn-logout">Salir</button>
             </a>
-            {include file="logo.tpl"}
             
         </header>
         <label class="subti-perfil">Perfil Administrador</label>
@@ -21,6 +12,9 @@
         <table class="table-admin">
             <thead>
                 <tr>
+                    <th colspan="6">Listado de Series</th>
+                </tr>
+                <tr class="fila-indicador">
                     <th>Serie</th>
                     <th>Sinopsis</th>
                     <th>Actor</th>
@@ -35,10 +29,11 @@
                     <td>{$serie->nombre}</td>
                     <td>{$serie->sinopsis}</td>
                     <td>{$serie->actor_principal}</td>
-                    <td>{$serie->id_genero}</td>
+                    <td hidden>{$serie->img}</td>
+                    <td id={$serie->id_genero}>{$serie->nombreGen}</td>
                     <td>
-                        <a href="editarSerie/{$serie->id_serie}">
-                            <button type="button" class="btn-admin" class="btnEditar-js">Editar</button>
+                        <a>
+                            <button type="button" class="btn-admin btnEditarSer-js" id={$serie->id_serie}>Editar</button>
                         </a>
                     </td>
                     <td>
@@ -50,12 +45,12 @@
             {/foreach}
             </tbody>
         </table>
-
+        
         {* Lista Generos *}
         <table class="table-admin">
             <thead>
                 <tr>
-                    <th colspan="3">Categorias</th>
+                    <th colspan="3">Listado de Categorias</th>
                 </tr>
             </thead>
             <tbody>
@@ -64,7 +59,7 @@
                     <td class="nombre-gen" >{$gen->nombreGen}</td>
                     <td>
                     <a>
-                        <button type="button" class="btn-admin" id={$gen->id_genero}>Editar</button>
+                        <button type="button" class="btn-admin btnEditar-js" id={$gen->id_genero}>Editar</button>
                     </a>
                     </td>
                     <td>
@@ -73,10 +68,9 @@
                         </a>
                     </td>
                 </tr>
-                {include file="editarDatos.tpl"}
             {/foreach}
-
-            {include file="editarDatos.tpl"}
+            {include file="editarDatosSerie.tpl"}
+            {include file="editarDatosGenero.tpl"}
 
                 <tr>      {* INSERTAR NUEVO GENERO *}
                     <td colspan="3">
@@ -112,5 +106,6 @@
             </form>
         </div>
 
+        <script src="public/js/editarSerie.js"></script>
         <script src="public/js/editarGenero.js"></script>
 {include file="footer.tpl"}

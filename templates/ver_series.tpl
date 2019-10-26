@@ -6,6 +6,11 @@
 </a>
 
 {include file="header.tpl"}
+
+<a href="listaSerie" class="nav-link">
+    <button type="button" class="btn btn-danger">Lista de series</button>
+</a>
+
 <section>
     <h1 class="titulo">Series Destacadas</h1>
     <ul class="row">

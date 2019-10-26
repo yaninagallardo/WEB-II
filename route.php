@@ -44,7 +44,7 @@ if($action == ''){
             $controllerAdmin->BorrarSerie($partesURL[1]);
         }elseif($partesURL[0] == "editarSerie") {
             $controllerAdmin = new AdminController();
-            $controllerAdmin->EditarSerie($partesURL[1]);
+            $controllerAdmin->EditarSerie();
         }elseif($partesURL[0] == "insertarGenero") {
             $controllerAdmin = new AdminController();
             $controllerAdmin->InsertarGenero();

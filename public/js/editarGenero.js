@@ -1,11 +1,10 @@
 "use strict"
 
-let btnEdit = document.querySelectorAll(".btn-admin");
+let btnEdit = document.querySelectorAll(".btnEditar-js");
 for(let i=0; i<btnEdit.length;i++){
     btnEdit[i].addEventListener("click", function (){
-        let tds = btnEdit[i].closest("tr").querySelector("td");
+        let tds = btnEdit[i].closest("tr").querySelectorAll("td");
         let id = btnEdit[i].getAttribute("id");
-
         mostrarModal(tds, id);
     });
 }
@@ -13,7 +12,7 @@ for(let i=0; i<btnEdit.length;i++){
 
 document.querySelector(".btn-cancelar").addEventListener("click", ocultarModal);
 
-let form = document.querySelector("#box-editarGen");
+let box = document.querySelector("#box-editarGen");
 /**   método que:
  * agrega a la ventana modal la clase show para hacerla visible
  * toma el nombre que posee el td indicador de género y lo pasa al input de la ventana
@@ -21,21 +20,18 @@ let form = document.querySelector("#box-editarGen");
  */
  
 function mostrarModal(tds, id) {
-    form.classList.add("show-windows");
-    form.classList.remove("hidden-windows");
+    box.classList.add("show-windows");
+    box.classList.remove("hidden-windows");
 
-    let nombre = tds.innerHTML;
+    let nombre = tds[0].innerHTML;
     let editar = document.querySelector(".input-editar");
     editar.value= nombre;
-
-    document.querySelector(".id-hidden").innerHTML = id;
     document.querySelector(".btn-guardar").setAttribute("value", id);
 }
 
-function ocultarModal(event){
-    event.preventDefault();
-    form.classList.add("hidden-windows");
-    form.classList.remove("show-windows");
+function ocultarModal(){
+    box.classList.add("hidden-windows");
+    box.classList.remove("show-windows");
 }
 
 
