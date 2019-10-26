@@ -11,12 +11,13 @@
         <table class="table-admin">
             <thead>
                 <tr>
-                    <th colspan="6">Listado de Series</th>
+                    <th colspan="7">Listado de Series</th>
                 </tr>
                 <tr class="fila-indicador">
                     <th>Serie</th>
                     <th>Sinopsis</th>
                     <th>Actor</th>
+                    <th>Imagen</th>
                     <th>Categoria</th>
                     <th></th>
                     <th></th>
@@ -28,7 +29,7 @@
                     <td>{$serie->nombre}</td>
                     <td>{$serie->sinopsis}</td>
                     <td>{$serie->actor_principal}</td>
-                    <td hidden>{$serie->img}</td>
+                    <td>{$serie->img}</td>
                     <td id={$serie->id_genero}>{$serie->nombreGen}</td>
                     <td>
                         <a>

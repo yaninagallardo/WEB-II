@@ -149,7 +149,7 @@ footer{
 .table-admin {
     margin: 5% auto;
     margin-bottom: 1%;
-    width: 70%;
+    width: 90%;
     color: rgb(136, 255, 0);
 }
 table,th, td {
@@ -268,4 +268,8 @@ table,th, td {
     color: rgb(255, 217, 0);
 }
 
- 
+ /* LISTA SERIES */
+
+ .imagen-tabla{
+    width: 100%;
+ }

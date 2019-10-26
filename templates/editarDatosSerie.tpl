@@ -17,6 +17,7 @@
             <label class="label-ingreso">Ruta de imagen:</label>
             <input type="text" name="img" placeholder="Ingrese img"  class="input-editarSer">
             
+            <label class="label-ingreso">Género:</label>
             {* OPCIONES *}
                 <select class="input-editarSer" name="genero-editar" required>
                  <option class="opcionExistente"></option>

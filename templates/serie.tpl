@@ -11,9 +11,9 @@
         <h1>{$ser->nombre}</h1>
 
         {if $ser->img != null}
-            <img class="card altura" src={$ser->img} alt="Card">
+            <img src={$ser->img} alt={$ser->nombre}>
         {else}
-            <img class="card altura" src="public/images/img-noDisponible.png" alt="Imagen no disponible">
+            <img src="public/images/img-noDisponible.png" alt="Imagen no disponible">
         {/if}
 
         <label>Actor principal: {$ser->actor_principal}</label>
