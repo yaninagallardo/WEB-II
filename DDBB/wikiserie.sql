@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2019 a las 21:28:54
+-- Tiempo de generación: 26-10-2019 a las 21:13:52
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -30,17 +30,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `genero` (
   `id_genero` int(11) NOT NULL,
-  `nombre` varchar(60) NOT NULL
+  `nombreGen` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `genero`
 --
 
-INSERT INTO `genero` (`id_genero`, `nombre`) VALUES
+INSERT INTO `genero` (`id_genero`, `nombreGen`) VALUES
 (1, 'Acción'),
-(2, 'Terror'),
-(3, 'Comedia');
+(6, 'Terror'),
+(7, 'Comedia'),
+(9, 'Drama');
 
 -- --------------------------------------------------------
 
@@ -62,8 +63,10 @@ CREATE TABLE `serie` (
 --
 
 INSERT INTO `serie` (`id_serie`, `nombre`, `sinopsis`, `actor_principal`, `img`, `id_genero`) VALUES
-(1, 'Arrow', 'Oliver Queen, un billonario playboy, naufragó en una isla remota del Pacífico. Ahora, 5 años después de este accidente, Oliver es encontrado y llevado de vuelta a su hogar en Starlight City. ', 'Stephen Amell', 'public/images/arrow-portada-horizontal.png', 0),
-(2, 'The 100', '', '', NULL, 1);
+(5, 'Arrow ', 'La serie sigue a Oliver Queen (Stephen Amell), el multimillonario playboy de Ciudad Starling, que es descubierto en la misteriosa isla de Lian Yu cinco años después de que naufragara con su padre.', 'Stephen Amell', 'public/images/arrow.png', 1),
+(6, 'Big Bang Theory', 'Leonard y Sheldon son científicos destacados en Caltech, amigos a su vez de Howard y Raj, que son presentados como unos completos geeks, alejados de las inquietudes y problemas de la gente común. En el curso de la serie se muestra la dificultad de los protagonistas masculinos para relacionarse con personas de fuera de su entorno, principalmente de sexo femenino, dando lugar a situaciones cómicas.', 'Jim Parsons', 'public/images/bigBang.png', 7),
+(10, 'Stranger Things', 'La historia arranca durante la década de los 80, en el pueblo ficticio de Hawkins, Indiana, cuando un niño llamado Will Byers desaparece, hecho que destapa los extraños sucesos que tienen lugar en la zona, producto de una serie de experimentos que realiza el gobierno en un laboratorio científico cercano.', 'Millie Bobby Brown', 'public/images/stranger.png', 6),
+(11, 'Supernatural', 'La trama se remonta 22 años antes, cuando una noche, Mary Winchester es asesinada y quemada en su propia casa, hecho que provoca que su esposo John Winchester se embarque en un interminable viaje en busca de respuestas. ', 'Jared Padalecki', 'public/images/supernatural.png', 6);
 
 -- --------------------------------------------------------
 
@@ -99,7 +102,8 @@ ALTER TABLE `genero`
 -- Indices de la tabla `serie`
 --
 ALTER TABLE `serie`
-  ADD PRIMARY KEY (`id_serie`);
+  ADD PRIMARY KEY (`id_serie`),
+  ADD KEY `fk_genero` (`id_genero`);
 
 --
 -- Indices de la tabla `usuario`
@@ -115,19 +119,29 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `serie`
 --
 ALTER TABLE `serie`
-  MODIFY `id_serie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_serie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `serie`
+--
+ALTER TABLE `serie`
+  ADD CONSTRAINT `fk_genero` FOREIGN KEY (`id_genero`) REFERENCES `genero` (`id_genero`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
