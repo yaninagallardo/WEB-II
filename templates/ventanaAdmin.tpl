@@ -12,9 +12,7 @@
         <a href="logout">
                 <button class="btn-logout">Salir</button>
             </a>
-            <a href="series">
-                <img src="public/images/logo1.png" class="logo">
-            </a>
+            {include file="logo.tpl"}
             
         </header>
         <label class="subti-perfil">Perfil Administrador</label>

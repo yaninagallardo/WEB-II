@@ -64,7 +64,7 @@ class AdminController{
     public function InsertarSerie(){
         $this->checkLogginIn();
         $g = $_POST['genero'];
-        $this->model->InsertarSerie($_POST['nombre'],$_POST['sinopsis'],$_POST['url_img'],$_POST['actor'], $_POST['genero']);
+        $this->model->InsertarSerie($_POST['nombre'],$_POST['sinopsis'],$_POST['actor'],$_POST['url_img'], $_POST['genero']);
         // var_dump($g);
         header("Location: " . URL_ADMIN);
     }

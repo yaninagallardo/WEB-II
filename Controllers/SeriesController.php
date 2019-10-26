@@ -17,10 +17,10 @@ class SeriesController{
     public function GetSeries(){
        $series=$this->model->GetSeries();
        $generos=$this->modelGen->GetGeneros();
-       $this->view->DisplaySeries($series, $generos); 
+       $this->view->displaySeries($series, $generos); 
     }
 
-    public function GetSerie($id){
+    public function GetInfoSerie($id){
         $serie=$this->model->BuscarSerie($id);
         $this->view->infoSerie($serie);
     }

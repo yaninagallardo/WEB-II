@@ -7,7 +7,7 @@ class SeriesView {
     function __construct(){
     }
 
-    public function DisplaySeries($series,$generos){    
+    public function displaySeries($series,$generos){    
         $smarty = new Smarty();
         $smarty->assign('titulo',"Mostrar Series");
         $smarty->assign('lista_series',$series);
@@ -18,16 +18,16 @@ class SeriesView {
 
     public function mostrarSeries($array){
         $smarty=new Smarty();
-        $smarty->assign('titulo',"Titulo");
+        $smarty->assign('titulo',"Series disponibles");
         $smarty->assign('lista',$array);
         $smarty->display('templates/listaSeries.tpl');
     }
 
 
     public function infoSerie($serie){
-        $smarty=new Smarty();
-        $smarty->assign('titulo',"titulo");
-        $smarty->assign('serie',$serie);
+        $smarty= new Smarty();
+        $smarty->assign('titulo',"Información de serie");
+        $smarty->assign('serie', $serie);
         $smarty->display('templates/serie.tpl');
     }
    

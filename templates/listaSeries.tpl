@@ -1,4 +1,6 @@
 {include file="head.tpl"}
+
+{* lista series ordenadas por categoria y luego por nombre de serie *}
 <h1 class="titulo">Lista De Series</h1>
         <table class="table-admin" >
         <thead>
