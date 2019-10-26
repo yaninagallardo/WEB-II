@@ -17,6 +17,7 @@ nav{
     margin:3%;
     margin-right: 30%;
 }
+
 li a :hover{
     background-color: rgba(133, 170, 201, 0.945);
 }

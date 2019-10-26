@@ -22,6 +22,14 @@ class SeriesView {
         $smarty->assign('lista',$array);
         $smarty->display('templates/listaSeries.tpl');
     }
+
+
+    public function infoSerie($serie){
+        $smarty=new Smarty();
+        $smarty->assign('titulo',"titulo");
+        $smarty->assign('serie',$serie);
+        $smarty->display('templates/serie.tpl');
+    }
    
 }
 
