@@ -1,5 +1,4 @@
 {include file="head.tpl"}
-    <body>
         <header>
         <a href="logout">
                 <button class="btn-logout">Salir</button>
