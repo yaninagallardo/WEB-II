@@ -286,6 +286,8 @@ table,th, td {
 }
 
 .font{
-    color: aliceblue;
-    font-size: 30px;
+    color: chartreuse;
+    width: 65%;
+    margin-left: 10%;
+    font-size: 25px;
 }

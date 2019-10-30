@@ -13,7 +13,7 @@
     {/if}
  
     <label class="font">Actor principal: {$ser->actor_principal}</label>
-    <h2 class="font">Sinopsis</h2>
+    <h2 class="titulo">Sinopsis</h2>
     <p class="font">{$ser->sinopsis}</p>
 
 {include file="footer.tpl"}
