@@ -273,3 +273,19 @@ table,th, td {
  .imagen-tabla{
     width: 100%;
  }
+
+
+ /* INFO SERIE */
+.imagen-infoSerie{
+    width: 50%;
+    margin: 5% 20%;
+}
+
+.tit-info{
+    margin-top: 3%;
+}
+
+.font{
+    color: aliceblue;
+    font-size: 30px;
+}
