@@ -7,7 +7,7 @@
   archivos, pero en el resto de la página si andan asi que quizas en este tpl o antes hay algo que da error en eso.
  *}
 <section>
-    {foreach from=$serie item=ser}
+    
         <h1>{$ser->nombre}</h1>
 
         {if $ser->img != null}
@@ -19,6 +19,5 @@
         <label>Actor principal: {$ser->actor_principal}</label>
         <h2>Sinopsis</h2>
         <p>{$ser->sinopsis}</p>
-    {/foreach}
 </section>
 {include file="footer.tpl"}

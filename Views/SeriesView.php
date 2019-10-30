@@ -27,7 +27,7 @@ class SeriesView {
     public function infoSerie($serie){
         $smarty= new Smarty();
         $smarty->assign('titulo',"Información de serie");
-        $smarty->assign('serie', $serie);
+        $smarty->assign('ser', $serie);
         $smarty->display('templates/serie.tpl');
     }
    

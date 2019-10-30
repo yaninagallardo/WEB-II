@@ -34,7 +34,7 @@
         public function BuscarSerie($id){
             $sentencia=$this->db->prepare("SELECT * FROM serie WHERE id_serie=?");
             $sentencia->execute(array($id));
-            $serie = $sentencia->fetchAll(PDO::FETCH_OBJ);
+            $serie = $sentencia->fetch(PDO::FETCH_OBJ);
             return $serie;
         }
         public function EditarSerie($nombre, $sinopsis, $actor, $img, $id_genero, $id){
