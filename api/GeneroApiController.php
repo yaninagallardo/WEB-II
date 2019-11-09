@@ -46,7 +46,7 @@
             $genero = $this->getData(); // la obtengo del body
 
             // inserta el Genero
-            $generoId = $this->modelGenero->InsertarGenero($genero->nombre);
+            $generoId = $this->modelGenero->InsertarGenero($genero->nombreGen);
 
             // obtengo el recien creado
             $generoNuevo = $this->modelGenero->GetGenero($generoId);
@@ -65,7 +65,7 @@
 
             if ($genero) {
                 $body = $this->getData();
-                $nombre = $body->nombre;
+                $nombre = $body->nombreGen;
                 $genero = $this->modelGenero->EditarGenero($nombre, $genero_id);
                 $this->view->response("Genero id=$genero_id actualizado con éxito", 200);
             }

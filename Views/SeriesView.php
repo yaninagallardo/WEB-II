@@ -24,12 +24,14 @@ class SeriesView {
     }
 
 
-    public function infoSerie($serie){
+    public function infoSerie($serie,$comentarios){
         $smarty= new Smarty();
         $smarty->assign('titulo',"Información de serie");
         $smarty->assign('ser', $serie);
+        $smarty->assign('lista_comentarios',$comentarios);
         $smarty->display('templates/serie.tpl');
     }
+
    
 }
 

@@ -8,7 +8,7 @@ class ComentarioModel{
     }
 
     public function GetComentarios(){
-        $sentencia=$this->db->prepare("SELECT * FROM comentario ORDER BY comentario.fecha AND comentario.puntaje");
+        $sentencia = $this->db->prepare("SELECT * FROM comentario c INNER JOIN usuario u ON c.id_usuario = u.id_usuario ORDER BY c.fecha AND c.puntaje");
         $sentencia->execute();
         $comentarios=$sentencia->fetchAll(PDO::FETCH_OBJ);
 

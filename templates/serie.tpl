@@ -1,5 +1,5 @@
- {include file="head.tpl" }
- {include file="logo.tpl"}
+{include file="head.tpl" }
+{include file="logo.tpl"}
  {* 
         INFORMACION DE UN ITEM
  *}
@@ -16,4 +16,5 @@
     <h2 class="titulo">Sinopsis</h2>
     <p class="font">{$ser->sinopsis}</p>
 
+{include file="ver_comentarios.tpl"}
 {include file="footer.tpl"}

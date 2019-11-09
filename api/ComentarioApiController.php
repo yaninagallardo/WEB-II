@@ -45,7 +45,7 @@
             $comentario = $this->getData(); // la obtengo del body
 
             // inserta 
-            $comentarioId = $this->modelComentario->Insertaromentario($comentario->comentario, $comentario->puntaje, $comentario->fecha, $comentario->id_user);
+            $comentarioId = $this->modelComentario->InsertarComentario($comentario->comentario, $comentario->puntaje, $comentario->fecha, $comentario->id_usuario);
 
             // obtengo el recien creado
             $comentarioNuevo = $this->modelComentario->GetComentario($comentarioId);
@@ -67,7 +67,7 @@
                 $comentario = $body->comentario;
                 $puntaje = $body->puntaje;
                 $fecha = $body->fecha;
-                $id_user= $body->id_user;
+                $id_user= $body->id_usuario;
 
                 $comentario = $this->modelComentario->EditarComentario($comentario, $puntaje, $fecha, $id_user, $comentario_id);
                 $this->view->response("comentario id=$comentario_id actualizado con éxito", 200);
