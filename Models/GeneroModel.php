@@ -13,6 +13,13 @@
 
             return $generos;
         }
+        public function GetGenero($id){
+            $sentencia=$this->db->prepare("SELECT * FROM genero WHERE id_genero=? ORDER BY genero.nombreGen");
+            $sentencia->execute(array($id));
+            $genero=$sentencia->fetchAll(PDO::FETCH_OBJ);
+
+            return $genero;
+        }
 
         public function InsertarGenero($nombre){
             $sentencia =$this->db->prepare("INSERT INTO genero (nombreGen) VALUES (?)");
