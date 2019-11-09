@@ -4,7 +4,7 @@
         protected $modelGenero;
         protected $modelSerie;
         protected $modelComentario;
-        //protected $modelUser;
+        protected $modelUser;
         protected $view;
         private $data; 
 
@@ -14,7 +14,7 @@
             $this->modelGenero = new GeneroModel();
             $this->modelSerie = new SeriesModel();
             $this->modelComentario = new ComentarioModel();
-            //$this->modelUser = new UsuarioModel();
+            $this->modelUser = new UsuarioModel();
         }
 
         function getData(){ 

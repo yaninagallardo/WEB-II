@@ -3,6 +3,7 @@
     require_once("./api/GeneroApiController.php");
     require_once("./api/SerieApiController.php");
     require_once("./api/ComentarioApiController.php");
+    require_once("./api/UsuarioApiController.php");
 
     define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 
