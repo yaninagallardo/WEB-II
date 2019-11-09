@@ -20,7 +20,7 @@ class SeriesController{
     public function GetSeries(){
        $series=$this->model->GetSeries();
        $generos=$this->modelGen->GetGeneros();
-       $this->view->displaySeries($series, $generos, $comentarios); 
+       $this->view->displaySeries($series, $generos); 
        
     }
 
