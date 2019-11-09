@@ -2,6 +2,7 @@
     require_once("Router.php");
     require_once("./api/GeneroApiController.php");
     require_once("./api/SerieApiController.php");
+    require_once("./api/ComentarioApiController.php");
 
     define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 
@@ -28,6 +29,12 @@
     $router->addRoute("serie", "POST", "SerieApiController", "addSerie");
     $router->addRoute("serie/:ID", "PUT", "SerieApiController", "updateSerie");
 
+    //ruteo comentario
+    $router->addRoute("comentario", "GET", "ComentarioApiController", "getComentarios");
+    $router->addRoute("comentario/:ID", "GET", "ComentarioApiController", "getComentario");
+    $router->addRoute("comentario/:ID", "DELETE", "ComentarioApiController", "deleteComentario");
+    $router->addRoute("comentario", "POST", "ComentarioApiController", "addComentario");
+    $router->addRoute("comentario/:ID", "PUT", "ComentarioApiController", "updateComentario");
 
     // rutea
     $router->route($resource, $method);

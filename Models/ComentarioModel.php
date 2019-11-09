@@ -7,25 +7,35 @@ class ComentarioModel{
         $this->db=new PDO('mysql:host=localhost;'.'dbname=wikiserie;charset=utf8','root','');
     }
 
-    public function GetCoentarios(){
+    public function GetComentarios(){
         $sentencia=$this->db->prepare("SELECT * FROM comentario ORDER BY comentario.fecha AND comentario.puntaje");
         $sentencia->execute();
-        $generos=$sentencia->fetchAll(PDO::FETCH_OBJ);
+        $comentarios=$sentencia->fetchAll(PDO::FETCH_OBJ);
 
-        return $generos;
+        return $comentarios;
     }
 
-    public function InsertarGenero($comentario, $puntaje, $fecha, $id_user){
-        $sentencia =$this->db->prepare("INSERT INTO genero (comentario, puntaje, fecha, id_usuario) VALUES (?,?,?,?)");
+    public function GetComentario($id){
+        $sentencia = $this->db->prepare("SELECT * FROM comentario WHERE id_comentario=?");
+        $sentencia->execute(array($id));
+        $comentario = $sentencia->fetchAll(PDO::FETCH_OBJ);
+
+        return $comentario;
+    }
+
+    public function InsertarComentario($comentario, $puntaje, $fecha, $id_user){
+        $sentencia =$this->db->prepare("INSERT INTO comentario (comentario, puntaje, fecha, id_usuario) VALUES (?,?,?,?)");
         $sentencia->execute(array($comentario, $puntaje, $fecha, $id_user));
+
+        return $this->db->lastInsertId();
     }
 
-    public function BorrarGenero($id){
+    public function BorrarComentario($id){
         $sentencia = $this->db->prepare("DELETE FROM comentario WHERE id_comentario=?");
         $sentencia-> execute(array($id));
     }
 
-    public function EditarGenero($comentario, $puntaje, $fecha, $id_user, $id){
+    public function EditarComentario($comentario, $puntaje, $fecha, $id_user, $id){
         $sentencia =$this->db->prepare("UPDATE comentario SET comentario=?, punaje=?, fecha=?, id_usuario=? WHERE id_comentario=?");
         $sentencia->execute(array($comentario, $puntaje, $fecha, $id_user, $id));
     }
