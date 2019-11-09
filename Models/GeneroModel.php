@@ -24,6 +24,8 @@
         public function InsertarGenero($nombre){
             $sentencia =$this->db->prepare("INSERT INTO genero (nombreGen) VALUES (?)");
             $sentencia->execute(array($nombre));
+            
+            return $this->db->lastInsertId();
         }
 
         public function BorrarGenero($id){

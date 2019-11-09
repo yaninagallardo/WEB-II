@@ -24,6 +24,8 @@
         public function InsertarSerie($nombre,$sinopsis,$actor,$img,$genero){
             $sentencia =$this->db->prepare("INSERT INTO serie (nombre,sinopsis,actor_principal,img,id_genero) VALUES(?,?,?,?,?)");
             $sentencia->execute(array($nombre,$sinopsis,$actor,$img,$genero));
+
+            return $this->db->lastInsertId();
         }
 
         public function BorrarSerie($id){
