@@ -14,7 +14,6 @@ class AdminController{
         $this->view=new AdminView();
     }
 
-    //(NO DEJA INGRESAR)... sin ! antes de isset funciona
     public function checkLogginIn(){
         session_start();
 
@@ -62,7 +61,6 @@ class AdminController{
 
     public function InsertarSerie(){
         $this->checkLogginIn();
-        $g = $_POST['genero'];
         $this->model->InsertarSerie($_POST['nombre'],$_POST['sinopsis'],$_POST['actor'],$_POST['url_img'], $_POST['genero']);
         header("Location: " . URL_ADMIN);
     }
