@@ -112,7 +112,7 @@ footer{
 
 .form-login .btn-ingreso {
     width: 40%;
-    margin-top: 11%;
+    margin-top: 2%;
     background-color: rgb(211, 4, 73);
     border: transparent;
     color: azure;
@@ -122,6 +122,13 @@ footer{
     margin: 1% auto;
     color:red;
     font-size: 80%;
+}
+
+.btn-registrarse{
+    background-color: transparent;
+    border: transparent;
+    margin-top: 3%;
+    color: yellow;
 }
 
 /* ----------------  VENTANA ADMIN --------------- */
@@ -311,7 +318,12 @@ table,th, td {
     padding: 2%;
     margin: 1px 10%;
 }
-
+.coment-user{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-items: left;
+}
 .div-media .subtitulos{
     display: flex;
     flex-direction: column;
@@ -329,7 +341,7 @@ table,th, td {
 }
 
 .box-estrella{
-    margin: 0% 15%;
+    margin-left: 80%;
 }
 .estrella{
     color: yellow;

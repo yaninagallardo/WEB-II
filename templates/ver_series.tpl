@@ -1,9 +1,7 @@
 {* página principal *}
 {include file="head.tpl"}
 
-<a href="login">
-    <button type="button" class="btn-iniciarsesion">Iniciar Sesión</button>
-</a>
+{include file="session.tpl"}
 
 {include file="header.tpl"}
 

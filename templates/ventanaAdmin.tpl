@@ -1,11 +1,8 @@
 {include file="head.tpl"}
         <header>
-        <a href="logout">
-                <button class="btn-logout">Salir</button>
-            </a>
-            
+            {include file="logout.tpl"}
         </header>
-        <label class="subti-perfil">Perfil Administrador</label>
+        <label class="subti-perfil">Perfil Administrador de {$user}</label>       
 
         {* Lista series *}
         <table class="table-admin">

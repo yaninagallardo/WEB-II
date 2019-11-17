@@ -8,7 +8,7 @@ class UsuarioModel {
     }
 
     public function GetPassword($user){
-        $sentencia = $this->db->prepare( "SELECT pass FROM usuario WHERE user = ?");
+        $sentencia = $this->db->prepare( "SELECT * FROM usuario WHERE user = ?");
         $sentencia->execute(array($user));
         $pass = $sentencia->fetch(PDO::FETCH_OBJ);
 
