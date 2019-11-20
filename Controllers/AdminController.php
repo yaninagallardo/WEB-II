@@ -65,7 +65,11 @@ class AdminController{
 
     public function InsertarSerie(){
         $this->checkLogginIn();
-        $this->model->InsertarSerie($_POST['nombre'],$_POST['sinopsis'],$_POST['actor'],$_POST['url_img'], $_POST['genero']);
+        $img=$_FILES["img"];
+        $origen=$img["tmp_name"];
+        $destino="public/images/".uniqid().$img["name"];//uniqid() da un codigo unico a la imagen 
+        copy($origen,$destino);
+        $this->model->InsertarSerie($_POST['nombre'],$_POST['sinopsis'],$_POST['actor'],$destino, $_POST['genero']);
         header("Location: " . URL_ADMIN);
     }
 
