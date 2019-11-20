@@ -121,7 +121,7 @@ footer{
 .msj-error{
     margin: 1% auto;
     color:red;
-    font-size: 80%;
+    font-size: 100%;
 }
 
 .btn-registrarse{
@@ -346,4 +346,24 @@ table,th, td {
 .estrella{
     color: yellow;
     
+}
+
+/* REGISTRARSE */
+
+.form-register{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 3%;
+    background-color: rgba(13, 80, 80, 0.781);
+    margin: 0% auto;
+}
+
+.form-register input{
+    margin: 1%;
+}
+
+.btn-primary{
+    width: 50%;
+    margin: 1% auto;
 }

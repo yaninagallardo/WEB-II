@@ -8,11 +8,12 @@
         {if !empty($error)}
             <label class="msj-error">{$error}</label>
         {/if}
-        <a href="registrarse">
-            <button class="btn-registrarse">Registrarse</button>
-        </a>
+        
         <input type="submit" value="Ingresar" class="btn-ingreso">
     </form>
+    <a href="registrarse">
+        <button class="btn-registrarse">Registrarse</button>
+    </a>
 </div>
 
 {include file="footer.tpl"}

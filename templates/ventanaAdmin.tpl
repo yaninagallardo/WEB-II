@@ -1,6 +1,6 @@
 {include file="head.tpl"}
         <header>
-            {include file="logout.tpl"}
+            {include file="session.tpl"}
         </header>
         <label class="subti-perfil">Perfil Administrador de {$user}</label>       
 

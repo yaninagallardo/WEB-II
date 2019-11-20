@@ -14,5 +14,18 @@ class UsuarioModel {
 
         return $pass;
     }
+
+    public function GetUsuario($user){
+        $sentencia = $this->db->prepare( "SELECT user FROM usuario WHERE user = ?");
+        $sentencia->execute(array($user));
+        $usuario = $sentencia->fetch(PDO::FETCH_OBJ);
+
+        return $usuario;
+    }
+
+    public function InsertUsuarioInvitado($nombre, $usuario, $pass){
+        $sentencia = $this->db->prepare("INSERT INTO usuario (nombre,user,pass,admin) VALUES (?,?,?,'0')");
+        $sentencia->execute(array($nombre, $usuario, $pass));
+    }
 }
 ?>

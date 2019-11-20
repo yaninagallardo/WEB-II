@@ -2,6 +2,7 @@
 require_once "Controllers/SeriesController.php";
 require_once "Controllers/LoginController.php";
 require_once "Controllers/AdminController.php";
+require_once "Controllers/RegistroController.php";
 
 $action = $_GET["action"];
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
@@ -9,6 +10,7 @@ define("URL_SERIES", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT
 define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/login');
 define("URL_LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
 define("URL_ADMIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/ventAdmin');
+define("URL_REGISTRO", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/registrarse');
 
 
 $controller = new SeriesController();
@@ -54,7 +56,15 @@ if($action == ''){
         }elseif($partesURL[0] == "editarGenero") {
             $controllerAdmin = new AdminController();
             $controllerAdmin->EditarGenero();
+        }elseif($partesURL[0] == "registrarse") {
+            $controllerReg = new RegistroController();
+            $controllerReg->GetRegistro();
+        }elseif($partesURL[0] == "registrar") {
+            $controllerReg = new RegistroController();
+            $controllerReg->RegistrarUsuario();
         }
     }
+        
+    
 }
 ?>

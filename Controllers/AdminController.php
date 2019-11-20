@@ -29,7 +29,6 @@ class AdminController{
             }
         $_SESSION['LAST_ACTIVITY'] = time();
     }
-
     
         
     // envia a la vista lista de series y generos
