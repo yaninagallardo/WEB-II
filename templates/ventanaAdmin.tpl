@@ -88,10 +88,10 @@
             <label class="titulo-agregar">AGREGAR SERIE</label>
             
             {* INSERTAR SERIE *}
-            <form action="insertarSerie" method="POST" class='form-nuevaserie' required>
+            <form action="insertarSerie" method="POST" class='form-nuevaserie' enctype="multipart/form-data" required >
                 <input type="text" name="nombre" placeholder="Nombre" required>
                 <textarea name="sinopsis" placeholder="Sinopsis" required></textarea>
-                <input type="text" name="url_img" placeholder="Dirección de imagen">
+                <input type="file" name="img" placeholder="Dirección de imagen">
                 <input type="text" name="actor" placeholder="Actor" required>
 
                 {* OPCIONES *}
