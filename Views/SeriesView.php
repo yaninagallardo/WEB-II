@@ -17,7 +17,7 @@ class SeriesView {
         $smarty->display('templates/ver_series.tpl');
     }
 
-    public function mostrarSeries($array, $user){
+    public function mostrarSeries($array, $usere){
         $smarty=new Smarty();
         $smarty->assign('titulo',"Series disponibles");
         $smarty->assign('lista',$array);
@@ -26,11 +26,12 @@ class SeriesView {
     }
 
 
-    public function infoSerie($serie,$comentarios, $user){
+    public function infoSerie($serie,$comentarios, $user, $porc){
         $smarty= new Smarty();
         $smarty->assign('titulo',"Información de serie");
         $smarty->assign('ser', $serie);
         $smarty->assign("user", $user);
+        $smarty->assign("porcentaje", $porc);
         $smarty->assign('lista_comentarios',$comentarios);
         $smarty->display('templates/serie.tpl');
     }

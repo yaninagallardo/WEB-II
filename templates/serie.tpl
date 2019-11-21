@@ -13,7 +13,7 @@
         <img src="public/images/img-noDisponible.png" alt="Imagen no disponible">
     {/if}
    
-    
+    <label class="font">Calificación promedio: {$porcentaje}</label>
     <label class="font">Actor principal: {$ser->actor_principal}</label>
     <h2 class="titulo">Sinopsis</h2>
     <p class="font">{$ser->sinopsis}</p>

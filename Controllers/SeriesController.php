@@ -34,11 +34,23 @@ class SeriesController{
         $serie=$this->model->BuscarSerie($id);
         $comentarios=$this->modelComen->GetComentarios($id);
         $this->console_log(date('Y-m-d'));
-        $this->view->infoSerie($serie, $comentarios, $this->IsUser());
+        $porc = $this->porcentajeSerie($comentarios);
+        $this->console_log($porc);
+        $this->view->infoSerie($serie, $comentarios, $this->IsUser(), $porc);
     }
     public function serieGenero(){   
         $generos=$this->model->serieGenero();
+        
         $this->view->mostrarSeries($generos, $this->IsUser()); 
+    }
+
+    public function porcentajeSerie($comentarios){
+        $punt = 0;
+        foreach($comentarios as $comen){
+            $punt += $comen->puntaje;
+        }
+
+        return $punt / sizeof($comentarios);
     }
 
     /**DEBUG POR CONSOLA */
