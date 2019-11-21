@@ -3,6 +3,7 @@ require_once "Controllers/SeriesController.php";
 require_once "Controllers/LoginController.php";
 require_once "Controllers/AdminController.php";
 require_once "Controllers/RegistroController.php";
+require_once "Controllers/UsuariosController.php";
 
 $action = $_GET["action"];
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
@@ -11,6 +12,7 @@ define("URL_LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"
 define("URL_LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
 define("URL_ADMIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/ventAdmin');
 define("URL_REGISTRO", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/registrarse');
+define("URL_USUARIOS", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/listausuarios');
 
 
 $controller = new SeriesController();
@@ -59,9 +61,18 @@ if($action == ''){
         }elseif($partesURL[0] == "registrarse") {
             $controllerReg = new RegistroController();
             $controllerReg->GetRegistro();
-        }elseif($partesURL[0] == "registrar") {
+        }elseif($partesURL[0] == "registrarusuario") {
             $controllerReg = new RegistroController();
             $controllerReg->RegistrarUsuario();
+        }elseif($partesURL[0] == "listausuarios") {
+            $controllerUser = new UsuariosController();
+            $controllerUser->GetUsuarios();
+        }elseif($partesURL[0] == "eliminarusuario") {
+            $controllerUser = new UsuariosController();
+            $controllerUser->EliminarUsuario($partesURL[1]);
+        }elseif($partesURL[0] == "modificarperfil") {
+            $controllerUser = new UsuariosController();
+            $controllerUser->ModificarPerfil($partesURL[2], $partesURL[1]);
         }
     }
         

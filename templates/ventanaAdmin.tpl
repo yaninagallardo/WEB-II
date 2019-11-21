@@ -1,7 +1,9 @@
 {include file="head.tpl"}
-        <header>
-            {include file="session.tpl"}
-        </header>
+{include file="logo.tpl"}       
+{include file="session.tpl"}
+    <a  href="listausuarios">
+        <button>Lista de usuarios</button>
+        </a>
         <label class="subti-perfil">Perfil Administrador de {$user}</label>       
 
         {* Lista series *}

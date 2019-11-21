@@ -133,14 +133,12 @@ footer{
 
 /* ----------------  VENTANA ADMIN --------------- */
 .btn-logout{
+    margin: 0%;
     border: transparent;
     background-color: transparent;
     color: red;
     font-size:200%;
-
-    /* ubicación */
-    float: right;
-    margin: 5%;
+    margin-left: 90%;
 }
 
 .fila-indicador{
@@ -298,6 +296,10 @@ table,th, td {
     width: 65%;
     margin-left: 10%;
     font-size: 25px;
+}
+
+.video-iframe{
+    margin-left: 30%;
 }
 
 
