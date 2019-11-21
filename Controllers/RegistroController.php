@@ -12,23 +12,33 @@ class RegistroController{
     }
 
     public function GetRegistro(){
-        $this->view->Display(null);
+        $this->view->Display(null); //puede recibir un mensaje de error. 
     }
 
     public function RegistrarUsuario(){
         if(isset($_POST['user'])){
             $user = $this->model->GetUsuario($_POST['user']);
-            if(isset($user)){
+
+            $this->console_log($_POST['user']);  //debug
+
+            if(!isset($user)){
                 $error = "El nombre de usuario ya existe, por favor seleccione otro";
                 $this->view->Display($error);
             }else{
                 $hash = password_hash($_POST['pass'], PASSWORD_DEFAULT);
                 $this->model->InsertUsuarioInvitado($_POST['nombre'],$_POST['user'],$hash);
-                header("Location: ", URL_LOGIN);
+                header("Location: ". URL_LOGIN);
             }
         } else{
-            header("Location: ", URL_REGISTRO);
+           header("Location: ". URL_REGISTRO);
         }
+    }
+
+    /**DEBUG POR CONSOLA */
+    public function console_log( $data ){
+        echo '<script>';
+        echo 'console.log('. json_encode( $data ) .')';
+        echo '</script>';
     }
 }
 ?>
