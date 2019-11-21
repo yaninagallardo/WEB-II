@@ -5,6 +5,12 @@
 
 {include file="header.tpl"}
 
+{if isset($user) && $user->admin}
+    <a href="ventAdmin" class="nav-link">
+        <button type="button" class="btn btn-danger">Administración</button>
+    </a>
+{/if}
+
 <a href="listaSerie" class="nav-link">
     <button type="button" class="btn btn-danger">Lista de series</button>
 </a>

@@ -17,7 +17,7 @@ class LoginController{
 
         if (isset($usuario) && $usuario != null && password_verify($password, $usuario->pass)){
             session_start();
-            $_SESSION['user'] = $usuario->nombre;
+            $_SESSION['user'] = $usuario;
             $_SESSION['userId'] = $usuario->id_usuario;
 
             if($usuario->admin == 1){

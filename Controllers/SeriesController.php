@@ -16,23 +16,29 @@ class SeriesController{
         $this->modelComen=new ComentarioModel();
         $this->view=new SeriesView();
     }
-    
+    public function IsUser(){
+        session_start();
+        if(isset($_SESSION['user'])){
+            $user = $_SESSION['user'];
+            return $user;
+        }
+    }
     public function GetSeries(){
        $series=$this->model->GetSeries();
        $generos=$this->modelGen->GetGeneros();
-       $this->view->displaySeries($series, $generos); 
+       $this->view->displaySeries($series, $generos, $this->IsUser()); 
        
     }
 
     public function GetInfoSerie($id){
         $serie=$this->model->BuscarSerie($id);
         $comentarios=$this->modelComen->GetComentarios($id);
-        $this->console_log($id);
-        $this->view->infoSerie($serie, $comentarios);
+        $this->console_log(date('Y-m-d'));
+        $this->view->infoSerie($serie, $comentarios, $this->IsUser());
     }
     public function serieGenero(){   
         $generos=$this->model->serieGenero();
-        $this->view->mostrarSeries($generos); 
+        $this->view->mostrarSeries($generos, $this->IsUser()); 
     }
 
     /**DEBUG POR CONSOLA */

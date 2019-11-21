@@ -12,8 +12,10 @@ class UsuariosController{
     }
 
     public function GetUsuarios(){
+        session_start();
+        $user = $_SESSION['user'];
         $usuarios = $this->model-> GetUsuarios();
-        $this->view->Display($usuarios);
+        $this->view->Display($usuarios, $user);
     }
 
     public function EliminarUsuario($id){

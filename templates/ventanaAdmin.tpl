@@ -1,10 +1,10 @@
 {include file="head.tpl"}
 {include file="logo.tpl"}       
 {include file="session.tpl"}
-    <a  href="listausuarios">
-        <button>Lista de usuarios</button>
+    <a  href="listausuarios" class="nav-link">
+        <button class="btn btn-danger">Lista de usuarios</button>
         </a>
-        <label class="subti-perfil">Perfil Administrador de {$user}</label>       
+        <label class="subti-perfil">Perfil Administrador de {$user->nombre}</label>       
 
         {* Lista series *}
         <table class="table-admin">

@@ -1,5 +1,6 @@
 {include file="head.tpl" }
 {include file="logo.tpl"}
+{include file="session.tpl"}
  {* 
         INFORMACION DE UN ITEM
  *}

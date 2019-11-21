@@ -1,5 +1,6 @@
 {include file="head.tpl"}
 {include file="logo.tpl"}
+{include file="session.tpl"}
 <a href="ventAdmin">
     <button class="btn-admin">Volver</button>
 </a>
@@ -8,7 +9,7 @@
         <table class="table-admin" >
         <thead>
             <tr>
-                <th>User</th>
+                <th>Usuario</th>
                 <th>Nombre</th>
                 <th>Perfil</th>
                 <th>Admin/Invitado</th>
