@@ -26,12 +26,20 @@ class SeriesController{
 
     public function GetInfoSerie($id){
         $serie=$this->model->BuscarSerie($id);
-        $comentarios=$this->modelComen->GetComentarios();
+        $comentarios=$this->modelComen->GetComentarios($id);
+        $this->console_log($id);
         $this->view->infoSerie($serie, $comentarios);
     }
     public function serieGenero(){   
         $generos=$this->model->serieGenero();
         $this->view->mostrarSeries($generos); 
+    }
+
+    /**DEBUG POR CONSOLA */
+    public function console_log( $data ){
+        echo '<script>';
+        echo 'console.log('. json_encode( $data ) .')';
+        echo '</script>';
     }
 }
 ?>

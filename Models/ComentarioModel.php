@@ -7,9 +7,9 @@ class ComentarioModel{
         $this->db=new PDO('mysql:host=localhost;'.'dbname=wikiserie;charset=utf8','root','');
     }
 
-    public function GetComentarios(){
-        $sentencia = $this->db->prepare("SELECT * FROM comentario c INNER JOIN usuario u ON c.id_usuario = u.id_usuario ORDER BY c.fecha AND c.puntaje");
-        $sentencia->execute();
+    public function GetComentarios($idSerie){
+        $sentencia = $this->db->prepare("SELECT * FROM comentario c INNER JOIN usuario u ON c.id_usuario = u.id_usuario WHERE c.id_serie = ? ORDER BY c.fecha AND c.puntaje");
+        $sentencia->execute(array($idSerie));
         $comentarios=$sentencia->fetchAll(PDO::FETCH_OBJ);
 
         return $comentarios;
