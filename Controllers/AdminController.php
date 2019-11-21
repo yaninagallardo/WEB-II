@@ -17,7 +17,7 @@ class AdminController{
     public function checkLogginIn(){
         session_start();
 
-        if(isset($_SESSION['userId'])){
+        if(!isset($_SESSION['userId'])){
             header("Location: " . URL_LOGIN);
             die();
         }
