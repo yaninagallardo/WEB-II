@@ -16,7 +16,7 @@
     
     <label class="font">Actor principal: {$ser->actor_principal}</label>
     <h2 class="titulo">Sinopsis</h2>
-    <p class="font">{$ser->sinopsis}</p>
-
+    <p class="font">{$ser->sinopsis}</p> 
+{include file="comentario.tpl"}
 {include file="ver_comentarios.tpl"}
 {include file="footer.tpl"}
