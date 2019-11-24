@@ -5,23 +5,23 @@
 
     class ComentarioApiController extends ApiController{
     
-        public function getComentarios($params = null) {
-            $comentarios = $this->modelComentario->GetComentarios();
-            $this->view->response($comentarios, 200);
-        }
+        // public function getComentarios($params = null) {
+        //     $comentarios = $this->modelComentario->GetComentarios();
+        //     $this->view->response($comentarios, 200);
+        // }
 
         /**
          * Obtiene dado un ID
          * 
          * $params arreglo asociativo con los parámetros del recurso
          */
-        public function getComentario($params = null) {
+        public function getComentarios($params = null) {
             // obtiene el parametro de la ruta
-            $id = $params[':ID'];
+            // $id = $params[':ID'];
             
-            $comentario = $this->modelComentario->GetComentarios($id);
-            
+            $comentario = $this->modelComentario->GetComentarios();
             if ($comentario) {
+                
                 $this->view->response($comentario, 200);   
             } else {
                 $this->view->response("No existe comentario con el id={$id}", 404);
@@ -75,7 +75,5 @@
             else 
                 $this->view->response("comentario id=$comentario_id not found", 404);
         }
-
-
     }
 ?>

@@ -17,6 +17,9 @@
     <label class="font">Actor principal: {$ser->actor_principal}</label>
     <h2 class="titulo">Sinopsis</h2>
     <p class="font">{$ser->sinopsis}</p> 
+
 {include file="comentario.tpl"}
-{include file="ver_comentarios.tpl"}
-{include file="footer.tpl"}
+{include file="vue/ver_comentarios_vue.tpl"}
+<script src="public/js/comentario.js"></script>
+</body>
+</html>
