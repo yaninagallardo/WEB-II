@@ -369,3 +369,30 @@ table,th, td {
     width: 50%;
     margin: 1% auto;
 }
+
+
+/* FORMULARIO COMENTAR */
+
+.form-comentar{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30%;
+    width: 30%;
+    padding: 3%;
+    background-color: rgba(13, 80, 80, 0.781);
+    margin: 0% auto;
+    
+}
+
+.form-comentar .input-comentario{
+    height: 100px;
+    margin-left: 10%;
+}
+
+.form-comentar .input-puntaje
+{
+    width: 40%;
+    height: 40px;
+    margin-left: 10%;
+    margin-bottom: 7%;
+}

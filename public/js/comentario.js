@@ -19,18 +19,18 @@ function inicio() {
             .then(response => response.json())
             .then(comentarios => {
                 app.comentarios = comentarios;
-                console.log('comentarios ' + app.comentarios);
             })
             .catch(error => console.log('Error en get de la api ' + error));
-
-
     }
 
     function addComentario(e) {
         e.preventDefault();
+        
         let data = {
-            comentarios: document.querySelector("input[name=comentario]").value,
-            puntaje: document.querySelector("input[name=puntaje]")
+            comentarios: document.querySelector("textarea[name=comentario]").value,
+            puntaje: document.querySelector("input[name=puntaje]").value,
+            fecha: getFechaActual(),
+            id_usuario: document.querySelector("input[name=usuario]").value
         }
         fetch("api/comentario", {
             method: 'POST',
@@ -41,6 +41,16 @@ function inicio() {
                 getComentario();
             })
             .catch(error => console.log(error));
+    }
+
+
+    function getFechaActual(){
+        let fechaActual = new Date();
+        let dd = fechaActual.getDate();
+        let mm = fechaActual.getMonth()+1;
+        let yyyy = fechaActual.getFullYear();
+
+        return dd+'/'+mm+'/'+yyyy;
     }
     getComentario();
 }

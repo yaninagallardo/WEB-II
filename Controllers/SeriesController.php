@@ -33,9 +33,7 @@ class SeriesController{
     public function GetInfoSerie($id){
         $serie=$this->model->BuscarSerie($id);
         $comentarios=$this->modelComen->GetComentarios($id);
-        $this->console_log(date('Y-m-d'));
         $porc = $this->porcentajeSerie($comentarios);
-        $this->console_log($porc);
         $this->view->infoSerie($serie, $comentarios, $this->IsUser(), $porc);
     }
     public function serieGenero(){   
