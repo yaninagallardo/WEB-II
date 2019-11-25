@@ -26,12 +26,11 @@ class SeriesView {
     }
 
 
-    public function infoSerie($serie,$comentarios, $user, $porc){
+    public function infoSerie($serie,$comentarios, $user){
         $smarty= new Smarty();
         $smarty->assign('titulo',"Información de serie");
         $smarty->assign('ser', $serie);
         $smarty->assign("user", $user);
-        $smarty->assign("porcentaje", $porc);
         $smarty->assign('lista_comentarios',$comentarios);
         $smarty->display('templates/serie.tpl');
     }

@@ -304,17 +304,17 @@ table,th, td {
 
 
 /* VER_COMENTARIOS */
-.box-comentarios{
-    display: flex;
-    flex-direction: column;
-    padding: 5%;
-}
+
 .titulo-box{
-    font-size: 30px;
-    color: lightblue;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    margin-left: 10%;
 
 }
 .comentario{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
     background-color: rgba(60, 59, 61, 0.705);
     width: 50%;
     padding: 2%;
@@ -326,7 +326,7 @@ table,th, td {
     flex-direction: row;
     justify-items: left;
 }
-.div-media .subtitulos{
+.div-media{
     display: flex;
     flex-direction: column;
 }
@@ -343,11 +343,15 @@ table,th, td {
 }
 
 .box-estrella{
-    margin-left: 80%;
+    margin-left: 50%;
 }
 .estrella{
-    color: yellow;
-    
+    color: yellow;  
+}
+
+a .btn-eliminar{
+    background-color: white;
+    color: red;
 }
 
 /* REGISTRARSE */
@@ -380,7 +384,7 @@ table,th, td {
     width: 30%;
     padding: 3%;
     background-color: rgba(13, 80, 80, 0.781);
-    margin: 0% auto;
+    margin: 3% auto;
     
 }
 
@@ -395,4 +399,10 @@ table,th, td {
     height: 40px;
     margin-left: 10%;
     margin-bottom: 7%;
+}
+
+.valoracion{
+    color: rgb(231, 255, 19);
+    font-size: 20px;
+    margin-left: 10%;
 }

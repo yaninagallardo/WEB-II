@@ -4,11 +4,6 @@
     require_once("./api/JSONView.php");
 
     class ComentarioApiController extends ApiController{
-    
-        // public function getComentarios($params = null) {
-        //     $comentarios = $this->modelComentario->GetComentarios();
-        //     $this->view->response($comentarios, 200);
-        // }
 
         /**
          * Obtiene dado un ID
@@ -17,9 +12,9 @@
          */
         public function getComentarios($params = null) {
             // obtiene el parametro de la ruta
-            // $id = $params[':ID'];
+            $id = $params[':ID'];
             
-            $comentario = $this->modelComentario->GetComentarios();
+            $comentario = $this->modelComentario->GetComentarios($id);
             if ($comentario) {
                 
                 $this->view->response($comentario, 200);   
@@ -43,10 +38,10 @@
         
         public function addComentario($params = []) {     
             $comentario = $this->getData(); // la obtengo del body
-
+            
             // inserta 
-            $comentarioId = $this->modelComentario->InsertarComentario($comentario->comentario, $comentario->puntaje, $comentario->fecha, $comentario->id_usuario);
-
+            $comentarioId = $this->modelComentario->InsertarComentario($comentario->comentario, $comentario->puntaje, $comentario->fecha, $comentario->id_usuario, $comentario->id_serie);
+            $this->console_log($comentarioId);
             // obtengo el recien creado
             $comentarioNuevo = $this->modelComentario->GetComentario($comentarioId);
             
@@ -75,5 +70,12 @@
             else 
                 $this->view->response("comentario id=$comentario_id not found", 404);
         }
+
+        /**DEBUG POR CONSOLA */
+    public function console_log( $data ){
+        echo '<script>';
+        echo 'api comentario ('. json_encode( $data ) .')';
+        echo '</script>';
+    }
     }
 ?>

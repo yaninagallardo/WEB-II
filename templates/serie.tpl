@@ -4,7 +4,7 @@
  {* 
         INFORMACION DE UN ITEM
  *}
-  
+   <input type="text" name="serie" value="{$ser->id_serie}" class="hidden-windows">
     <h1 class="titulo tit-info">{$ser->nombre}</h1>
 
     {if $ser->img != null}
@@ -13,11 +13,9 @@
         <img src="public/images/img-noDisponible.png" alt="Imagen no disponible">
     {/if}
    
-    <label class="font">Calificación promedio: {$porcentaje}</label>
     <label class="font">Actor principal: {$ser->actor_principal}</label>
     <h2 class="titulo">Sinopsis</h2>
     <p class="font">{$ser->sinopsis}</p> 
-
 
 {include file="vue/ver_comentarios_vue.tpl"}
 {include file="comentario.tpl"}
