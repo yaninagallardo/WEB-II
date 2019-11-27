@@ -16,5 +16,11 @@ class AdminView {
         // $smarty->debugging = true;
         $smarty->display('templates/ventanaAdmin.tpl');
     }
+
+    public function DisplayError($error){
+        $smarty=new Smarty();
+        $smarty->assign('error',$error);
+        $smarty->display('templates/ventanaAdmin.tpl');
+    }
 }
 ?>

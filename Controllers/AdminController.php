@@ -65,12 +65,17 @@ class AdminController{
 
     public function InsertarSerie(){
         $this->checkLogginIn();
-        $img=$_FILES["img"];
-        $origen=$img["tmp_name"];
-        $destino="public/images/".uniqid().$img["name"];//uniqid() da un codigo unico a la imagen 
-        copy($origen,$destino);
-        $this->model->InsertarSerie($_POST['nombre'],$_POST['sinopsis'],$_POST['actor'],$destino, $_POST['genero']);
-        header("Location: " . URL_ADMIN);
+        if(($_FILES["img"]["type"]=="image/png") || ($_FILES["img"]["type"]=="image/jpg")){
+            $img=$_FILES["img"];
+            $origen=$img["tmp_name"];
+            $destino="public/images/".uniqid().$img["name"];//uniqid() da un codigo unico a la imagen 
+            copy($origen,$destino);
+            $this->model->InsertarSerie($_POST['nombre'],$_POST['sinopsis'],$_POST['actor'],$destino, $_POST['genero']);
+            header("Location: " . URL_ADMIN);
+        }else{
+            $error="el archivo no es tipo de imagen";
+            $this->view->displayError($error);
+        }
     }
 
     public function BorrarSerie($id){

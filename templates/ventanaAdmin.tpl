@@ -90,9 +90,8 @@
             <form action="insertarSerie" method="POST" class='form-nuevaserie' enctype="multipart/form-data" required >
                 <input type="text" name="nombre" placeholder="Nombre" required>
                 <textarea name="sinopsis" placeholder="Sinopsis" required></textarea>
-                <input type="file" name="img" placeholder="Dirección de imagen">
+                <input type="file" name="img" placeholder="Ingrese imagen">
                 <input type="text" name="actor" placeholder="Actor" required>
-
                 {* OPCIONES *}
                 <select class="opciones" name="genero" required>
                  <option value="" disable>Seleccione una opción</option>
@@ -100,7 +99,9 @@
                     <option value={$gen->id_genero}>{$gen->nombreGen}</option>
                 {/foreach}
                 </select>
-
+                {if !empty($error)}
+                    <label class="msj-error">{$error}</label>
+                {/if}
                 <input type="submit" value="Insertar" class="btn-ingreso">
             </form>
         </div>
