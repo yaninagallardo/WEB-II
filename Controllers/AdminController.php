@@ -33,7 +33,6 @@ class AdminController{
         
     // envia a la vista lista de series y generos
     public function GetSeries(){
-
         session_start();
         $user= $_SESSION['user'];
         $series=$this->model->serieGenero();
@@ -73,9 +72,9 @@ class AdminController{
             $this->model->InsertarSerie($_POST['nombre'],$_POST['sinopsis'],$_POST['actor'],$destino, $_POST['genero']);
             header("Location: " . URL_ADMIN);
         }else{
-            $error="el archivo no es tipo de imagen";
-            $this->view->displayError($error);
+            $this->GetSeries();
         }
+        
     }
 
     public function BorrarSerie($id){
