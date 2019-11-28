@@ -15,6 +15,7 @@
             $id = $params[':ID'];
             
             $comentario = $this->modelComentario->GetComentarios($id);
+            
             if ($comentario) {
                 
                 $this->view->response($comentario, 200);   
