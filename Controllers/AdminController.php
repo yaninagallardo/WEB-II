@@ -29,15 +29,15 @@ class AdminController{
             }
         $_SESSION['LAST_ACTIVITY'] = time();
     }
-    
-        
     // envia a la vista lista de series y generos
     public function GetSeries(){
         session_start();
-        $user= $_SESSION['user'];
-        $series=$this->model->serieGenero();
-        $generos=$this->modelGen->GetGeneros();
-        $this->view->DisplaySeries($series,$generos,$user); 
+        if(!isset($_SESSION['userId'])){
+            $user= $_SESSION['user'];
+            $series=$this->model->serieGenero();
+            $generos=$this->modelGen->GetGeneros();
+            $this->view->DisplaySeries($series,$generos,$user);
+        } 
     }
 
     // ABM GENERO

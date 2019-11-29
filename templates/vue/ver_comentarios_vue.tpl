@@ -1,5 +1,5 @@
 {* comentarios si no hay en la bd trae mensaje, por lo tanto no toma null *}
-<input value={$user->admin} class="hidden-windows" name=admin>
+<input class="hidden-windows" value={$user->admin} name=admin>
 
 <section id="template-vue-comentarios">
     <div class="box-comentarios d-flex flex-column bd-highlight mb-3">
@@ -9,7 +9,7 @@
         <div class="comentario border border-primary media"  v-for="comentario in comentarios">
             <div class="div-media media-body">
             
-                <button class="btn-eliminar" v-if="admin">ELIMINAR</button>
+                <button class="btn-eliminar" v-if="admin" v-on:click="deleteComentario(comentario.id_comentario)">ELIMINAR</button>
            
                 <div class="box-estrella" >
                         <label class="estrella"> {{ comentario.puntaje}}★</label>

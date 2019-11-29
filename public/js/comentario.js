@@ -75,8 +75,7 @@ function inicio() {
             })
             .catch(error => console.log("error addComentario js " + error));
     }
-    function deleteComentario() {
-        let id = document.querySelector(".btn-eliminar").getAttribute("id");
+    function deleteComentario(id) {
 
         console.log(id);
 
