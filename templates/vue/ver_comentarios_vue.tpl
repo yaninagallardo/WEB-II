@@ -9,7 +9,7 @@
         <div class="comentario border border-primary media"  v-for="comentario in comentarios">
             <div class="div-media media-body">
             
-                <button class="btn-eliminar" v-if="admin" v-on:click="deleteComentario({{comentario.id_comentario}})">ELIMINAR</button>
+                <button class="btn-eliminar" v-if="admin" v-on:click="deleteComentario()">ELIMINAR</button>
            
                 <div class="box-estrella" >
                         <label class="estrella"> {{ comentario.puntaje}}★</label>
